@@ -9,23 +9,43 @@
 /* Begin PBXBuildFile section */
 		668CF81476C4324F72FDB76A /* Pods_Merk2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D421F867DF600E2988CBC133 /* Pods_Merk2.framework */; };
 		B8A490A0270E090A0052AC61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4909F270E090A0052AC61 /* AppDelegate.swift */; };
-		B8A490A2270E090A0052AC61 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A490A1270E090A0052AC61 /* SceneDelegate.swift */; };
-		B8A490A4270E090A0052AC61 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A490A3270E090A0052AC61 /* ViewController.swift */; };
 		B8A490A7270E090A0052AC61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A490A5270E090A0052AC61 /* Main.storyboard */; };
 		B8A490A9270E09110052AC61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A490A8270E09110052AC61 /* Assets.xcassets */; };
 		B8A490AC270E09110052AC61 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A490AA270E09110052AC61 /* LaunchScreen.storyboard */; };
+		B8D682D2270E1097005E7630 /* LaunchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682CC270E1097005E7630 /* LaunchPresenter.swift */; };
+		B8D682D3270E1097005E7630 /* LaunchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682CD270E1097005E7630 /* LaunchRouter.swift */; };
+		B8D682D4270E1097005E7630 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682CE270E1097005E7630 /* LaunchViewController.swift */; };
+		B8D682D5270E1097005E7630 /* LaunchProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682CF270E1097005E7630 /* LaunchProtocols.swift */; };
+		B8D682D6270E1097005E7630 /* LaunchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682D0270E1097005E7630 /* LaunchInteractor.swift */; };
+		B8D682D7270E1097005E7630 /* LaunchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D682D1270E1097005E7630 /* LaunchViewController.xib */; };
+		B8D682DF270E1305005E7630 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682D9270E1305005E7630 /* LoginPresenter.swift */; };
+		B8D682E0270E1305005E7630 /* LoginRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682DA270E1305005E7630 /* LoginRouter.swift */; };
+		B8D682E1270E1305005E7630 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682DB270E1305005E7630 /* LoginViewController.swift */; };
+		B8D682E2270E1305005E7630 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682DC270E1305005E7630 /* LoginProtocols.swift */; };
+		B8D682E3270E1305005E7630 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682DD270E1305005E7630 /* LoginInteractor.swift */; };
+		B8D682E4270E1305005E7630 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D682DE270E1305005E7630 /* LoginViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		48C1F78A196022FA7E3B3DAC /* Pods-Merk2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merk2.release.xcconfig"; path = "Target Support Files/Pods-Merk2/Pods-Merk2.release.xcconfig"; sourceTree = "<group>"; };
 		B8A4909C270E090A0052AC61 /* Merk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Merk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A4909F270E090A0052AC61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B8A490A1270E090A0052AC61 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		B8A490A3270E090A0052AC61 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B8A490A6270E090A0052AC61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B8A490A8270E09110052AC61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B8A490AB270E09110052AC61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B8A490AD270E09110052AC61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B8D682CC270E1097005E7630 /* LaunchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchPresenter.swift; sourceTree = "<group>"; };
+		B8D682CD270E1097005E7630 /* LaunchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchRouter.swift; sourceTree = "<group>"; };
+		B8D682CE270E1097005E7630 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		B8D682CF270E1097005E7630 /* LaunchProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchProtocols.swift; sourceTree = "<group>"; };
+		B8D682D0270E1097005E7630 /* LaunchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchInteractor.swift; sourceTree = "<group>"; };
+		B8D682D1270E1097005E7630 /* LaunchViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LaunchViewController.xib; sourceTree = "<group>"; };
+		B8D682D9270E1305005E7630 /* LoginPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		B8D682DA270E1305005E7630 /* LoginRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRouter.swift; sourceTree = "<group>"; };
+		B8D682DB270E1305005E7630 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B8D682DC270E1305005E7630 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
+		B8D682DD270E1305005E7630 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
+		B8D682DE270E1305005E7630 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		D421F867DF600E2988CBC133 /* Pods_Merk2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Merk2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6863EBDA3DE0F3F2A21D8F /* Pods-Merk2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merk2.debug.xcconfig"; path = "Target Support Files/Pods-Merk2/Pods-Merk2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -56,7 +76,6 @@
 				ED6863EBDA3DE0F3F2A21D8F /* Pods-Merk2.debug.xcconfig */,
 				48C1F78A196022FA7E3B3DAC /* Pods-Merk2.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -81,15 +100,41 @@
 		B8A4909E270E090A0052AC61 /* Merk2 */ = {
 			isa = PBXGroup;
 			children = (
+				B8D682D8270E12EC005E7630 /* LoginView */,
+				B8D682BF270E1066005E7630 /* LaunchView */,
 				B8A4909F270E090A0052AC61 /* AppDelegate.swift */,
-				B8A490A1270E090A0052AC61 /* SceneDelegate.swift */,
-				B8A490A3270E090A0052AC61 /* ViewController.swift */,
 				B8A490A5270E090A0052AC61 /* Main.storyboard */,
 				B8A490A8270E09110052AC61 /* Assets.xcassets */,
 				B8A490AA270E09110052AC61 /* LaunchScreen.storyboard */,
 				B8A490AD270E09110052AC61 /* Info.plist */,
 			);
 			path = Merk2;
+			sourceTree = "<group>";
+		};
+		B8D682BF270E1066005E7630 /* LaunchView */ = {
+			isa = PBXGroup;
+			children = (
+				B8D682CC270E1097005E7630 /* LaunchPresenter.swift */,
+				B8D682CD270E1097005E7630 /* LaunchRouter.swift */,
+				B8D682CE270E1097005E7630 /* LaunchViewController.swift */,
+				B8D682CF270E1097005E7630 /* LaunchProtocols.swift */,
+				B8D682D0270E1097005E7630 /* LaunchInteractor.swift */,
+				B8D682D1270E1097005E7630 /* LaunchViewController.xib */,
+			);
+			path = LaunchView;
+			sourceTree = "<group>";
+		};
+		B8D682D8270E12EC005E7630 /* LoginView */ = {
+			isa = PBXGroup;
+			children = (
+				B8D682D9270E1305005E7630 /* LoginPresenter.swift */,
+				B8D682DA270E1305005E7630 /* LoginRouter.swift */,
+				B8D682DB270E1305005E7630 /* LoginViewController.swift */,
+				B8D682DC270E1305005E7630 /* LoginProtocols.swift */,
+				B8D682DD270E1305005E7630 /* LoginInteractor.swift */,
+				B8D682DE270E1305005E7630 /* LoginViewController.xib */,
+			);
+			path = LoginView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -152,9 +197,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B8D682E4270E1305005E7630 /* LoginViewController.xib in Resources */,
 				B8A490AC270E09110052AC61 /* LaunchScreen.storyboard in Resources */,
 				B8A490A9270E09110052AC61 /* Assets.xcassets in Resources */,
 				B8A490A7270E090A0052AC61 /* Main.storyboard in Resources */,
+				B8D682D7270E1097005E7630 /* LaunchViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,9 +254,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B8A490A4270E090A0052AC61 /* ViewController.swift in Sources */,
+				B8D682E1270E1305005E7630 /* LoginViewController.swift in Sources */,
+				B8D682E3270E1305005E7630 /* LoginInteractor.swift in Sources */,
+				B8D682E2270E1305005E7630 /* LoginProtocols.swift in Sources */,
+				B8D682D3270E1097005E7630 /* LaunchRouter.swift in Sources */,
 				B8A490A0270E090A0052AC61 /* AppDelegate.swift in Sources */,
-				B8A490A2270E090A0052AC61 /* SceneDelegate.swift in Sources */,
+				B8D682DF270E1305005E7630 /* LoginPresenter.swift in Sources */,
+				B8D682D2270E1097005E7630 /* LaunchPresenter.swift in Sources */,
+				B8D682D6270E1097005E7630 /* LaunchInteractor.swift in Sources */,
+				B8D682D5270E1097005E7630 /* LaunchProtocols.swift in Sources */,
+				B8D682E0270E1305005E7630 /* LoginRouter.swift in Sources */,
+				B8D682D4270E1097005E7630 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
