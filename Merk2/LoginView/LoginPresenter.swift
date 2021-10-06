@@ -22,4 +22,15 @@ class LoginPresenter: LoginPresenterProtocol {
         self.router = router
     }
 
+    func login(phone:String, pass:String){
+        interactor?.login(phone: phone, pass: pass)
+    }
+    
+    func loginError(message: String) {
+        view?.loginError(message: message)
+    }
+    
+    func loginSucces(message: String) {
+        view?.loginSucces(message: message)
+    }
 }

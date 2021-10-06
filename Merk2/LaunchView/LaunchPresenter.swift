@@ -22,7 +22,7 @@ class LaunchPresenter: LaunchPresenterProtocol {
         self.router = router
     }
 
-    func navegaALogin(){
-        router.navegaALogin()
+    func goToLogin(){
+        router.goToLogin()
     }
 }

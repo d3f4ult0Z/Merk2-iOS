@@ -28,8 +28,8 @@ class LaunchRouter: LaunchWireframeProtocol {
         return view
     }
     
-    func navegaALogin(){
-        let loginVista = LoginRouter.createModule()
-        viewController?.navigationController?.pushViewController(loginVista, animated: true)
+    func goToLogin(){
+        let loginView = LoginRouter.createModule()
+        viewController?.navigationController?.pushViewController(loginView, animated: true)
     }
 }

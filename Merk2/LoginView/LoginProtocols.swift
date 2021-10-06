@@ -11,22 +11,27 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol LoginWireframeProtocol: class {
+protocol LoginWireframeProtocol: AnyObject {
 
 }
 //MARK: Presenter -
-protocol LoginPresenterProtocol: class {
-
+protocol LoginPresenterProtocol: AnyObject {
+    func login(phone:String, pass:String)
+    func loginSucces(message:String)
+    func loginError(message:String)
 }
 
 //MARK: Interactor -
-protocol LoginInteractorProtocol: class {
+protocol LoginInteractorProtocol: AnyObject {
 
   var presenter: LoginPresenterProtocol?  { get set }
+    func login(phone:String, pass:String)
 }
 
 //MARK: View -
-protocol LoginViewProtocol: class {
+protocol LoginViewProtocol: AnyObject {
 
   var presenter: LoginPresenterProtocol?  { get set }
+    func loginSucces(message:String)
+    func loginError(message:String)
 }

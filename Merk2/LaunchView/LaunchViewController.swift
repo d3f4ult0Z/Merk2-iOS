@@ -13,7 +13,9 @@ import UIKit
 class LaunchViewController: UIViewController, LaunchViewProtocol {
 
 	var presenter: LaunchPresenterProtocol?
-
+    
+    @IBOutlet weak var iconLauncher: UIImageView!
+    
 	override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -21,7 +23,11 @@ class LaunchViewController: UIViewController, LaunchViewProtocol {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        self.presenter?.navegaALogin()
+        UIView.animate(withDuration: 2, delay: 0, options: .curveEaseInOut, animations: {
+            self.iconLauncher.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+        }, completion: { _ in
+            self.presenter?.goToLogin()
+        })
     }
     
 }

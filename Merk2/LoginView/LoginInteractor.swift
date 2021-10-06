@@ -13,4 +13,23 @@ import UIKit
 class LoginInteractor: LoginInteractorProtocol {
 
     weak var presenter: LoginPresenterProtocol?
+    
+    func login(phone:String, pass:String){
+        let url = "https://api.latitudmegalopolis.com/functions/test.php"
+        let complement = "?keycode=LOGINPOST"
+        let params = ["phone" : phone, "pass" : pass]
+        
+        Services().request(url, complemet: complement, method: .post, params: params, model: BasicResponse.self){response, error in
+            if let responseData = response{
+                if responseData.success{
+                    self.presenter?.loginSucces(message: responseData.mensaje)
+                }else{
+                    self.presenter?.loginError(message: responseData.mensaje)
+                }
+            }else{
+                self.presenter?.loginError(message: "Error en el servidor, favor de intentar mas tarde")
+            }
+            print(error)
+        }
+    }
 }

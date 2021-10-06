@@ -24,6 +24,8 @@
 		B8D682E2270E1305005E7630 /* LoginProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682DC270E1305005E7630 /* LoginProtocols.swift */; };
 		B8D682E3270E1305005E7630 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682DD270E1305005E7630 /* LoginInteractor.swift */; };
 		B8D682E4270E1305005E7630 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8D682DE270E1305005E7630 /* LoginViewController.xib */; };
+		B8D682E7270E1709005E7630 /* Services.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682E6270E1709005E7630 /* Services.swift */; };
+		B8D682EA270E277B005E7630 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8D682E9270E277B005E7630 /* Models.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +48,8 @@
 		B8D682DC270E1305005E7630 /* LoginProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginProtocols.swift; sourceTree = "<group>"; };
 		B8D682DD270E1305005E7630 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		B8D682DE270E1305005E7630 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		B8D682E6270E1709005E7630 /* Services.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Services.swift; sourceTree = "<group>"; };
+		B8D682E9270E277B005E7630 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
 		D421F867DF600E2988CBC133 /* Pods_Merk2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Merk2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED6863EBDA3DE0F3F2A21D8F /* Pods-Merk2.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merk2.debug.xcconfig"; path = "Target Support Files/Pods-Merk2/Pods-Merk2.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -100,6 +104,7 @@
 		B8A4909E270E090A0052AC61 /* Merk2 */ = {
 			isa = PBXGroup;
 			children = (
+				B8D682E5270E16F5005E7630 /* Utils */,
 				B8D682D8270E12EC005E7630 /* LoginView */,
 				B8D682BF270E1066005E7630 /* LaunchView */,
 				B8A4909F270E090A0052AC61 /* AppDelegate.swift */,
@@ -135,6 +140,15 @@
 				B8D682DE270E1305005E7630 /* LoginViewController.xib */,
 			);
 			path = LoginView;
+			sourceTree = "<group>";
+		};
+		B8D682E5270E16F5005E7630 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B8D682E6270E1709005E7630 /* Services.swift */,
+				B8D682E9270E277B005E7630 /* Models.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8D682E1270E1305005E7630 /* LoginViewController.swift in Sources */,
+				B8D682EA270E277B005E7630 /* Models.swift in Sources */,
+				B8D682E7270E1709005E7630 /* Services.swift in Sources */,
 				B8D682E3270E1305005E7630 /* LoginInteractor.swift in Sources */,
 				B8D682E2270E1305005E7630 /* LoginProtocols.swift in Sources */,
 				B8D682D3270E1097005E7630 /* LaunchRouter.swift in Sources */,
