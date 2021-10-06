@@ -48,9 +48,23 @@ class LoginViewController: UIViewController, LoginViewProtocol {
             let alert = UIAlertController(title: "Error", message: "Favor de capturar usuario y contraseña", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .default))
             self.present(alert, animated: true, completion: nil)
-        }else{
-            loginView.isHidden = false
-            presenter?.login(phone: phoneStr, pass: passStr)
+            
+        }else if phoneStr.count != 10{
+            let alert = UIAlertController(title: "Error", message: "El teléfono debe tener 10 dígitos", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion:nil )
+        
+        }
+                    
+        else{
+            if let _ = Int(phoneStr){
+                loginView.isHidden = false
+                presenter?.login(phone: phoneStr, pass: passStr)
+            }else{
+                let alert = UIAlertController(title: "ERROR", message: "El teléfono debe contener solo numeros", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
