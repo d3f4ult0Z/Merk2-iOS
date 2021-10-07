@@ -12,13 +12,14 @@ import Foundation
 
 //MARK: Wireframe -
 protocol LoginWireframeProtocol: AnyObject {
-
+    func navigateRegister()
 }
 //MARK: Presenter -
 protocol LoginPresenterProtocol: AnyObject {
     func login(phone:String, pass:String)
     func loginSucces(message:String)
     func loginError(message:String)
+    func navigateRegister()
 }
 
 //MARK: Interactor -

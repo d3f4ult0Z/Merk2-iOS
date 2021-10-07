@@ -33,4 +33,8 @@ class LoginPresenter: LoginPresenterProtocol {
     func loginSucces(message: String) {
         view?.loginSucces(message: message)
     }
+    
+    func navigateRegister(){
+        router.navigateRegister()
+    }
 }

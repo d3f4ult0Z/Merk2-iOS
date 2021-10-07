@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		668CF81476C4324F72FDB76A /* Pods_Merk2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D421F867DF600E2988CBC133 /* Pods_Merk2.framework */; };
+		B843A943270F3C7A00A08664 /* RegisterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843A93D270F3C7A00A08664 /* RegisterPresenter.swift */; };
+		B843A944270F3C7A00A08664 /* RegisterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843A93E270F3C7A00A08664 /* RegisterRouter.swift */; };
+		B843A945270F3C7A00A08664 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843A93F270F3C7A00A08664 /* RegisterViewController.swift */; };
+		B843A946270F3C7A00A08664 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843A940270F3C7A00A08664 /* RegisterProtocols.swift */; };
+		B843A947270F3C7A00A08664 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843A941270F3C7A00A08664 /* RegisterInteractor.swift */; };
+		B843A948270F3C7A00A08664 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B843A942270F3C7A00A08664 /* RegisterViewController.xib */; };
 		B8A490A0270E090A0052AC61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4909F270E090A0052AC61 /* AppDelegate.swift */; };
 		B8A490A7270E090A0052AC61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A490A5270E090A0052AC61 /* Main.storyboard */; };
 		B8A490A9270E09110052AC61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A490A8270E09110052AC61 /* Assets.xcassets */; };
@@ -30,6 +36,12 @@
 
 /* Begin PBXFileReference section */
 		48C1F78A196022FA7E3B3DAC /* Pods-Merk2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merk2.release.xcconfig"; path = "Target Support Files/Pods-Merk2/Pods-Merk2.release.xcconfig"; sourceTree = "<group>"; };
+		B843A93D270F3C7A00A08664 /* RegisterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterPresenter.swift; sourceTree = "<group>"; };
+		B843A93E270F3C7A00A08664 /* RegisterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterRouter.swift; sourceTree = "<group>"; };
+		B843A93F270F3C7A00A08664 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		B843A940270F3C7A00A08664 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
+		B843A941270F3C7A00A08664 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
+		B843A942270F3C7A00A08664 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		B8A4909C270E090A0052AC61 /* Merk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Merk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A4909F270E090A0052AC61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A490A6270E090A0052AC61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -83,6 +95,19 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B843A93C270F3C6000A08664 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				B843A93D270F3C7A00A08664 /* RegisterPresenter.swift */,
+				B843A93E270F3C7A00A08664 /* RegisterRouter.swift */,
+				B843A93F270F3C7A00A08664 /* RegisterViewController.swift */,
+				B843A940270F3C7A00A08664 /* RegisterProtocols.swift */,
+				B843A941270F3C7A00A08664 /* RegisterInteractor.swift */,
+				B843A942270F3C7A00A08664 /* RegisterViewController.xib */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
 		B8A49093270E09090052AC61 = {
 			isa = PBXGroup;
 			children = (
@@ -104,6 +129,7 @@
 		B8A4909E270E090A0052AC61 /* Merk2 */ = {
 			isa = PBXGroup;
 			children = (
+				B843A93C270F3C6000A08664 /* Register */,
 				B8D682E5270E16F5005E7630 /* Utils */,
 				B8D682D8270E12EC005E7630 /* LoginView */,
 				B8D682BF270E1066005E7630 /* LaunchView */,
@@ -216,6 +242,7 @@
 				B8A490A9270E09110052AC61 /* Assets.xcassets in Resources */,
 				B8A490A7270E090A0052AC61 /* Main.storyboard in Resources */,
 				B8D682D7270E1097005E7630 /* LaunchViewController.xib in Resources */,
+				B843A948270F3C7A00A08664 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -277,10 +304,15 @@
 				B8A490A0270E090A0052AC61 /* AppDelegate.swift in Sources */,
 				B8D682DF270E1305005E7630 /* LoginPresenter.swift in Sources */,
 				B8D682D2270E1097005E7630 /* LaunchPresenter.swift in Sources */,
+				B843A947270F3C7A00A08664 /* RegisterInteractor.swift in Sources */,
+				B843A943270F3C7A00A08664 /* RegisterPresenter.swift in Sources */,
 				B8D682D6270E1097005E7630 /* LaunchInteractor.swift in Sources */,
+				B843A945270F3C7A00A08664 /* RegisterViewController.swift in Sources */,
+				B843A944270F3C7A00A08664 /* RegisterRouter.swift in Sources */,
 				B8D682D5270E1097005E7630 /* LaunchProtocols.swift in Sources */,
 				B8D682E0270E1305005E7630 /* LoginRouter.swift in Sources */,
 				B8D682D4270E1097005E7630 /* LaunchViewController.swift in Sources */,
+				B843A946270F3C7A00A08664 /* RegisterProtocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

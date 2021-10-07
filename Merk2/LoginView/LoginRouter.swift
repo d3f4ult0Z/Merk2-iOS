@@ -27,4 +27,9 @@ class LoginRouter: LoginWireframeProtocol {
         
         return view
     }
+    
+    func navigateRegister(){
+        let registerView = RegisterRouter.createModule()
+        viewController?.navigationController?.pushViewController(registerView, animated: true)
+    }
 }

@@ -69,7 +69,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     }
     
     @IBAction func newUserAction(_ sender: UIButton) {
-        
+        presenter?.navigateRegister()
     }
     
     func loginSucces(message:String){
