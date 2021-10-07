@@ -14,6 +14,12 @@
 		B843A946270F3C7A00A08664 /* RegisterProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843A940270F3C7A00A08664 /* RegisterProtocols.swift */; };
 		B843A947270F3C7A00A08664 /* RegisterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B843A941270F3C7A00A08664 /* RegisterInteractor.swift */; };
 		B843A948270F3C7A00A08664 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B843A942270F3C7A00A08664 /* RegisterViewController.xib */; };
+		B8668D9D270FAE1500E3C9A8 /* HomeProductsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668D97270FAE1500E3C9A8 /* HomeProductsPresenter.swift */; };
+		B8668D9E270FAE1500E3C9A8 /* HomeProductsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668D98270FAE1500E3C9A8 /* HomeProductsRouter.swift */; };
+		B8668D9F270FAE1500E3C9A8 /* HomeProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668D99270FAE1500E3C9A8 /* HomeProductsViewController.swift */; };
+		B8668DA0270FAE1500E3C9A8 /* HomeProductsProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668D9A270FAE1500E3C9A8 /* HomeProductsProtocols.swift */; };
+		B8668DA1270FAE1500E3C9A8 /* HomeProductsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8668D9B270FAE1500E3C9A8 /* HomeProductsInteractor.swift */; };
+		B8668DA2270FAE1500E3C9A8 /* HomeProductsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B8668D9C270FAE1500E3C9A8 /* HomeProductsViewController.xib */; };
 		B8A490A0270E090A0052AC61 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8A4909F270E090A0052AC61 /* AppDelegate.swift */; };
 		B8A490A7270E090A0052AC61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B8A490A5270E090A0052AC61 /* Main.storyboard */; };
 		B8A490A9270E09110052AC61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8A490A8270E09110052AC61 /* Assets.xcassets */; };
@@ -42,6 +48,12 @@
 		B843A940270F3C7A00A08664 /* RegisterProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterProtocols.swift; sourceTree = "<group>"; };
 		B843A941270F3C7A00A08664 /* RegisterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterInteractor.swift; sourceTree = "<group>"; };
 		B843A942270F3C7A00A08664 /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		B8668D97270FAE1500E3C9A8 /* HomeProductsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductsPresenter.swift; sourceTree = "<group>"; };
+		B8668D98270FAE1500E3C9A8 /* HomeProductsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductsRouter.swift; sourceTree = "<group>"; };
+		B8668D99270FAE1500E3C9A8 /* HomeProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductsViewController.swift; sourceTree = "<group>"; };
+		B8668D9A270FAE1500E3C9A8 /* HomeProductsProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductsProtocols.swift; sourceTree = "<group>"; };
+		B8668D9B270FAE1500E3C9A8 /* HomeProductsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProductsInteractor.swift; sourceTree = "<group>"; };
+		B8668D9C270FAE1500E3C9A8 /* HomeProductsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeProductsViewController.xib; sourceTree = "<group>"; };
 		B8A4909C270E090A0052AC61 /* Merk2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Merk2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8A4909F270E090A0052AC61 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B8A490A6270E090A0052AC61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -108,6 +120,19 @@
 			path = Register;
 			sourceTree = "<group>";
 		};
+		B8668D96270FADF500E3C9A8 /* HomeProducts */ = {
+			isa = PBXGroup;
+			children = (
+				B8668D97270FAE1500E3C9A8 /* HomeProductsPresenter.swift */,
+				B8668D98270FAE1500E3C9A8 /* HomeProductsRouter.swift */,
+				B8668D99270FAE1500E3C9A8 /* HomeProductsViewController.swift */,
+				B8668D9A270FAE1500E3C9A8 /* HomeProductsProtocols.swift */,
+				B8668D9B270FAE1500E3C9A8 /* HomeProductsInteractor.swift */,
+				B8668D9C270FAE1500E3C9A8 /* HomeProductsViewController.xib */,
+			);
+			path = HomeProducts;
+			sourceTree = "<group>";
+		};
 		B8A49093270E09090052AC61 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +154,7 @@
 		B8A4909E270E090A0052AC61 /* Merk2 */ = {
 			isa = PBXGroup;
 			children = (
+				B8668D96270FADF500E3C9A8 /* HomeProducts */,
 				B843A93C270F3C6000A08664 /* Register */,
 				B8D682E5270E16F5005E7630 /* Utils */,
 				B8D682D8270E12EC005E7630 /* LoginView */,
@@ -241,6 +267,7 @@
 				B8A490AC270E09110052AC61 /* LaunchScreen.storyboard in Resources */,
 				B8A490A9270E09110052AC61 /* Assets.xcassets in Resources */,
 				B8A490A7270E090A0052AC61 /* Main.storyboard in Resources */,
+				B8668DA2270FAE1500E3C9A8 /* HomeProductsViewController.xib in Resources */,
 				B8D682D7270E1097005E7630 /* LaunchViewController.xib in Resources */,
 				B843A948270F3C7A00A08664 /* RegisterViewController.xib in Resources */,
 			);
@@ -296,7 +323,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8D682E1270E1305005E7630 /* LoginViewController.swift in Sources */,
+				B8668D9E270FAE1500E3C9A8 /* HomeProductsRouter.swift in Sources */,
 				B8D682EA270E277B005E7630 /* Models.swift in Sources */,
+				B8668DA1270FAE1500E3C9A8 /* HomeProductsInteractor.swift in Sources */,
 				B8D682E7270E1709005E7630 /* Services.swift in Sources */,
 				B8D682E3270E1305005E7630 /* LoginInteractor.swift in Sources */,
 				B8D682E2270E1305005E7630 /* LoginProtocols.swift in Sources */,
@@ -306,11 +335,14 @@
 				B8D682D2270E1097005E7630 /* LaunchPresenter.swift in Sources */,
 				B843A947270F3C7A00A08664 /* RegisterInteractor.swift in Sources */,
 				B843A943270F3C7A00A08664 /* RegisterPresenter.swift in Sources */,
+				B8668DA0270FAE1500E3C9A8 /* HomeProductsProtocols.swift in Sources */,
 				B8D682D6270E1097005E7630 /* LaunchInteractor.swift in Sources */,
 				B843A945270F3C7A00A08664 /* RegisterViewController.swift in Sources */,
 				B843A944270F3C7A00A08664 /* RegisterRouter.swift in Sources */,
+				B8668D9D270FAE1500E3C9A8 /* HomeProductsPresenter.swift in Sources */,
 				B8D682D5270E1097005E7630 /* LaunchProtocols.swift in Sources */,
 				B8D682E0270E1305005E7630 /* LoginRouter.swift in Sources */,
+				B8668D9F270FAE1500E3C9A8 /* HomeProductsViewController.swift in Sources */,
 				B8D682D4270E1097005E7630 /* LaunchViewController.swift in Sources */,
 				B843A946270F3C7A00A08664 /* RegisterProtocols.swift in Sources */,
 			);

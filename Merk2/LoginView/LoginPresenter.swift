@@ -37,4 +37,8 @@ class LoginPresenter: LoginPresenterProtocol {
     func navigateRegister(){
         router.navigateRegister()
     }
+    
+    func navigateHome(){
+        router.navigateHome()
+    }
 }

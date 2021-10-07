@@ -115,4 +115,9 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         self.present(alert, animated: true, completion: nil)
         
     }
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
+    
 }

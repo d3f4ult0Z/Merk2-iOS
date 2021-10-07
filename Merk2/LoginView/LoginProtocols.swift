@@ -13,6 +13,7 @@ import Foundation
 //MARK: Wireframe -
 protocol LoginWireframeProtocol: AnyObject {
     func navigateRegister()
+    func navigateHome()
 }
 //MARK: Presenter -
 protocol LoginPresenterProtocol: AnyObject {
@@ -20,6 +21,7 @@ protocol LoginPresenterProtocol: AnyObject {
     func loginSucces(message:String)
     func loginError(message:String)
     func navigateRegister()
+    func navigateHome()
 }
 
 //MARK: Interactor -

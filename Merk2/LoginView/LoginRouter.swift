@@ -32,4 +32,9 @@ class LoginRouter: LoginWireframeProtocol {
         let registerView = RegisterRouter.createModule()
         viewController?.navigationController?.pushViewController(registerView, animated: true)
     }
+    
+    func navigateHome(){
+        let homeView = HomeProductsRouter.createModule()
+        viewController?.navigationController?.pushViewController(homeView, animated: true)
+    }
 }

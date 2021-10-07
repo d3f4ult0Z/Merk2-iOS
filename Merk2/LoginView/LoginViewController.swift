@@ -77,6 +77,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         let alert = UIAlertController(title: "¡Exito!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: { _ in
             //ir a la siguiente vista
+            self.presenter?.navigateHome()
         }))
         self.present(alert, animated: true, completion: nil)
     }
