@@ -11,6 +11,18 @@
 import UIKit
 
 class RegisterPresenter: RegisterPresenterProtocol {
+    func register(user: String, name: String, phone: String, mail: String,pass: String) {
+        interactor?.register(user: user, name: name, phone: phone, mail: mail, pass: pass)
+    }
+    
+    func registerSucces(message: String) {
+        view?.registerSucces(message: message)
+    }
+    
+    func registerError(message: String) {
+        view?.registerError(message: message)
+    }
+    
 
     weak private var view: RegisterViewProtocol?
     var interactor: RegisterInteractorProtocol?

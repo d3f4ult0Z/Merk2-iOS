@@ -11,22 +11,29 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol RegisterWireframeProtocol: class {
+protocol RegisterWireframeProtocol: AnyObject {
 
 }
 //MARK: Presenter -
-protocol RegisterPresenterProtocol: class {
+protocol RegisterPresenterProtocol: AnyObject {
+    func register(user:String,name:String,phone:String,mail:String,pass:String)
+    func registerSucces(message:String)
+    func registerError(message:String)
 
 }
 
 //MARK: Interactor -
-protocol RegisterInteractorProtocol: class {
+protocol RegisterInteractorProtocol: AnyObject {
 
   var presenter: RegisterPresenterProtocol?  { get set }
+    func register(user:String,name:String,phone:String,mail:String,pass:String)
+    
 }
 
 //MARK: View -
-protocol RegisterViewProtocol: class {
+protocol RegisterViewProtocol: AnyObject {
 
   var presenter: RegisterPresenterProtocol?  { get set }
+    func registerSucces(message:String)
+    func registerError(message:String)
 }

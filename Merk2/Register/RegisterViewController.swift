@@ -11,11 +11,108 @@
 import UIKit
 
 class RegisterViewController: UIViewController, RegisterViewProtocol {
-
-	var presenter: RegisterPresenterProtocol?
+    @IBOutlet weak var iconview: UIImageView!
+    @IBOutlet weak var user: UITextField!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var mail: UITextField!
+    @IBOutlet weak var phone: UITextField!
+    @IBOutlet weak var pass: UITextField!
+    @IBOutlet weak var confirmpass: UITextField!
+    
+    @IBOutlet weak var viewregister: UIView!
+    var presenter: RegisterPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        config()
     }
+    func config(){
+        iconview.layer.cornerRadius = iconview.frame.height / 2
+        
+    }
+    @IBAction func login(_ sender: Any) {
+        guard let userStr = user.text else{
+            return
+        }
+        guard let nameStr = name.text else{
+            return
+        }
+        guard let mailStr = mail.text else{
+            return
+        }
+        guard let passStr = pass.text else{
+            return
+        }
+        guard let phoneStr = phone.text else{
+            return
+        }
+        if user.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Coloca tu usuario", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }else if name.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Coloca tu nombre", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }else if mail.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Coloca tu mail", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+        }else if !mailStr.contains("@gmail"){
+            let alert = UIAlertController(title: "Error", message: "Coloca el mail con formato: @gmail", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+        }else if phone.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Coloca tu telefono", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }else if pass.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Coloca tu contraseña", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            
+        }else if confirmpass.text == "" {
+            let alert = UIAlertController(title: "Error", message: "Confirma tu contraseña", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        
+        }else if phoneStr.count != 10{
+            let alert = UIAlertController(title: "Error", message: "El teléfono debe tener 10 dígitos", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion:nil )
 
+        }else if pass.text != confirmpass.text{
+            let alert = UIAlertController(title: "Error", message: "Tu contraseña es diferente", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+            self.present(alert, animated: true, completion:nil )
+    }else
+        if let _ = Int(phoneStr){
+        viewregister.isHidden = false
+        presenter?.register(user: userStr, name: nameStr, phone: phoneStr, mail: mailStr, pass: passStr)
+        }else{
+            let alert = UIAlertController(title: "ERROR", message: "El teléfono debe contener solo numeros", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    func registerSucces(message:String){
+        viewregister.isHidden = true
+        let alert = UIAlertController(title: "Registro exitoso", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: {_ in self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    
+    }
+    func registerError(message:String){
+        viewregister.isHidden = true
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continua", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+        
+    }
 }

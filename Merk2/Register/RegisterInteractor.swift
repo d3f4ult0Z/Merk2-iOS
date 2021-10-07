@@ -11,6 +11,24 @@
 import UIKit
 
 class RegisterInteractor: RegisterInteractorProtocol {
-
+  
     weak var presenter: RegisterPresenterProtocol?
+    func register(user:String,name:String,phone:String,mail:String,pass:String){
+        let url = "https://api.latitudmegalopolis.com/functions/test.php"
+        let complement = "?keycode=NEWUSERPOST"
+        let params = ["user": user,"name" : name,"mail": mail,"phone" : phone, "pass" : pass,]
+        
+        Services().request(url, complemet: complement, method: .post, params: params, model: BasicResponse.self){response, error in
+            if let responseData = response{
+                if responseData.success{
+                    self.presenter?.registerSucces(message:responseData.mensaje)
+                }else{
+                    self.presenter?.registerError(message: responseData.mensaje)
+                }
+            }else{
+                self.presenter?.registerError(message: "Error en el servidor, favor de intentar mas tarde")
+            }
+            print(error)
+        }
+    }
 }
