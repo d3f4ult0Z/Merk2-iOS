@@ -10,12 +10,36 @@
 
 import UIKit
 
-class HomeProductsViewController: UIViewController, HomeProductsViewProtocol {
-
+class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return product.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let products = tableView.dequeueReusableCell(withIdentifier: "products") as? products{
+            products.title.text = product[indexPath.row]
+            products.content.text = subproduct[indexPath.row]
+            products.price.text = "Abierto de:\(price[indexPath.row])"
+            return products
+        }
+        return UITableViewCell()
+    }
+    
+    @IBOutlet weak var tableproducts: UITableView!
+    
 	var presenter: HomeProductsPresenterProtocol?
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        tableproducts.delegate = self
+        tableproducts.dataSource = self
+        tableproducts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
+        tableproducts.reloadData()
     }
+    let product:[String] = [
+    "Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia"]
+    let subproduct:[String] = ["Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más"]
+    let price:[String] = [" 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"]
 
 }
+

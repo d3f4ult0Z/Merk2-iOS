@@ -3,11 +3,13 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeProductsViewController" customModule="Merk2" customModuleProvider="target">
             <connections>
+                <outlet property="tableproducts" destination="Z9y-z0-O16" id="gAX-TF-0nd"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,13 +24,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="300" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Z9y-z0-O16">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="Z9y-z0-O16" secondAttribute="trailing" id="807-Ze-8d7"/>
                 <constraint firstItem="75Y-wp-zgp" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FZJ-AR-Tmn"/>
+                <constraint firstAttribute="bottom" secondItem="Z9y-z0-O16" secondAttribute="bottom" id="I08-Qb-ook"/>
                 <constraint firstItem="75Y-wp-zgp" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Q7n-rx-4tj"/>
+                <constraint firstItem="Z9y-z0-O16" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SQ0-Wq-hr8"/>
+                <constraint firstItem="Z9y-z0-O16" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="urs-Ch-5dB"/>
             </constraints>
             <point key="canvasLocation" x="138" y="72"/>
         </view>
     </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
