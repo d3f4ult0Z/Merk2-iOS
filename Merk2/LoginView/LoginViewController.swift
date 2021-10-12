@@ -21,7 +21,7 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginView: UIView!
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
     }
@@ -77,6 +77,10 @@ class LoginViewController: UIViewController, LoginViewProtocol {
         let alert = UIAlertController(title: "¡Exito!", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Continuar", style: .default, handler: { _ in
             //ir a la siguiente vista
+            if let phoneStr = self.phoneTextField.text{
+                let def = UserDefaults.standard
+                def.set(phoneStr, forKey: "phone")
+            }
             self.presenter?.navigateHome()
         }))
         self.present(alert, animated: true, completion: nil)

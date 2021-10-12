@@ -11,22 +11,23 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol HomeProductsWireframeProtocol: class {
-
+protocol HomeProductsWireframeProtocol: AnyObject {
+    func navigateDetailStore()
 }
 //MARK: Presenter -
-protocol HomeProductsPresenterProtocol: class {
-
+protocol HomeProductsPresenterProtocol: AnyObject {
+    func navigateDetailStore()
+    
 }
 
 //MARK: Interactor -
-protocol HomeProductsInteractorProtocol: class {
+protocol HomeProductsInteractorProtocol: AnyObject {
 
   var presenter: HomeProductsPresenterProtocol?  { get set }
 }
 
 //MARK: View -
-protocol HomeProductsViewProtocol: class {
+protocol HomeProductsViewProtocol: AnyObject {
 
   var presenter: HomeProductsPresenterProtocol?  { get set }
 }

@@ -21,5 +21,8 @@ class HomeProductsPresenter: HomeProductsPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-
+    func navigateDetailStore(){
+        router.navigateDetailStore()
+    }
+    
 }

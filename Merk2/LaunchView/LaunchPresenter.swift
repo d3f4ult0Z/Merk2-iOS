@@ -25,4 +25,7 @@ class LaunchPresenter: LaunchPresenterProtocol {
     func goToLogin(){
         router.goToLogin()
     }
+    func goToHome(){
+        router.goToHome()
+    }
 }

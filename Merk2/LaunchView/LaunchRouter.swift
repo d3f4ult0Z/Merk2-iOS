@@ -32,4 +32,9 @@ class LaunchRouter: LaunchWireframeProtocol {
         let loginView = LoginRouter.createModule()
         viewController?.navigationController?.pushViewController(loginView, animated: true)
     }
+    
+    func goToHome(){
+        let homeView = HomeProductsRouter.createModule()
+        viewController?.navigationController?.pushViewController(homeView, animated: true)
+    }
 }
