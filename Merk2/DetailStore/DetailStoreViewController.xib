@@ -10,6 +10,9 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailStoreViewController" customModule="Merk2" customModuleProvider="target">
             <connections>
                 <outlet property="TabDescripProcucts" destination="Yj5-LB-DmH" id="UiP-B4-gKP"/>
+                <outlet property="clas" destination="C8x-4a-VIX" id="rDm-29-0oL"/>
+                <outlet property="name" destination="b4R-EZ-3xV" id="moL-mb-OfT"/>
+                <outlet property="time" destination="hAz-fL-TKm" id="wu0-wX-2EO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -50,7 +53,7 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="270" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yj5-LB-DmH">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="270" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="Yj5-LB-DmH">
                     <rect key="frame" x="0.0" y="401" width="375" height="266"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                 </tableView>

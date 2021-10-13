@@ -25,7 +25,7 @@ class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UI
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.navigateDetailStore()
+        self.presenter?.navigateDetailStore(nombre: product[indexPath.row], categoria: subproduct[indexPath.row], horario: "Abierto de:\(price[indexPath.row])")
     }
     @IBOutlet weak var tableproducts: UITableView!
     

@@ -33,15 +33,22 @@ class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITa
         TabDescripProcucts.dataSource = self
         TabDescripProcucts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
         TabDescripProcucts.reloadData()
+        name.text = nombre
+        clas.text = categoria
+        time.text = horario
     }
     @IBAction func botonregresa(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var TabDescripProcucts: UITableView!
+    var nombre: String?, categoria: String?,horario: String?
     let product:[String] = [
     "Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia"]
     let subproduct:[String] = ["Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más"]
     let price:[String] = [" 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"]
     
-
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var clas: UILabel!
+    
+    @IBOutlet weak var time: UILabel!
 }

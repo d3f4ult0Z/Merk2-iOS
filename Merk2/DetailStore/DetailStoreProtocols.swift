@@ -11,22 +11,22 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol DetailStoreWireframeProtocol: class {
+protocol DetailStoreWireframeProtocol: AnyObject {
 
 }
 //MARK: Presenter -
-protocol DetailStorePresenterProtocol: class {
+protocol DetailStorePresenterProtocol: AnyObject {
 
 }
 
 //MARK: Interactor -
-protocol DetailStoreInteractorProtocol: class {
+protocol DetailStoreInteractorProtocol: AnyObject {
 
   var presenter: DetailStorePresenterProtocol?  { get set }
 }
 
 //MARK: View -
-protocol DetailStoreViewProtocol: class {
+protocol DetailStoreViewProtocol: AnyObject {
 
   var presenter: DetailStorePresenterProtocol?  { get set }
 }

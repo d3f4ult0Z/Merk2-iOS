@@ -27,8 +27,8 @@ class HomeProductsRouter: HomeProductsWireframeProtocol {
         
         return view
     }
-    func navigateDetailStore(){
-        let detailstore = DetailStoreRouter.createModule()
+    func navigateDetailStore(nombre: String, categoria: String, horario: String){
+        let detailstore = DetailStoreRouter.createModule(nombre: nombre, categoria: categoria, horario: horario)
         viewController?.navigationController?.pushViewController(detailstore, animated: true)
     }
     
