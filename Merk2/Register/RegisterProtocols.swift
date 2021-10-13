@@ -12,7 +12,6 @@ import Foundation
 
 //MARK: Wireframe -
 protocol RegisterWireframeProtocol: AnyObject {
-
 }
 //MARK: Presenter -
 protocol RegisterPresenterProtocol: AnyObject {

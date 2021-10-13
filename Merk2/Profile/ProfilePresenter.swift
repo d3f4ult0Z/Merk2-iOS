@@ -21,5 +21,8 @@ class ProfilePresenter: ProfilePresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
+    func navigateGoToLogin(){
+        router.navigateGoToLogin()
+    }
 
 }

@@ -27,4 +27,9 @@ class ProfileRouter: ProfileWireframeProtocol {
         
         return view
     }
+    func navigateGoToLogin(){
+        let profile = LoginRouter.createModule()
+        viewController?.navigationController?.pushViewController(profile, animated: true)
+        
+    }
 }

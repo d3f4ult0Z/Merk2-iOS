@@ -12,11 +12,11 @@ import Foundation
 
 //MARK: Wireframe -
 protocol ProfileWireframeProtocol: class {
-
+    func navigateGoToLogin()
 }
 //MARK: Presenter -
 protocol ProfilePresenterProtocol: class {
-
+    func navigateGoToLogin()
 }
 
 //MARK: Interactor -

@@ -3,11 +3,17 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Merk2" customModuleProvider="target">
             <connections>
+                <outlet property="close" destination="Bk0-qH-U4S" id="tbi-SR-FBG"/>
+                <outlet property="imagen" destination="gDt-9G-vBq" id="1dL-gd-7bj"/>
+                <outlet property="mail" destination="rM0-Z5-zPJ" id="Iaz-43-5Sd"/>
+                <outlet property="phone" destination="wOo-Up-O2V" id="BLM-TM-0sZ"/>
+                <outlet property="user" destination="5UE-hK-gaF" id="4Dx-RZ-fjN"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,19 +22,70 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Aqui va ir el perfil del usuario" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="343-In-BPt">
-                    <rect key="frame" x="78.5" y="323" width="218.5" height="21"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1QI-WD-X0A">
+                    <rect key="frame" x="137.5" y="60" width="100" height="100"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icono_principal" translatesAutoresizingMaskIntoConstraints="NO" id="gDt-9G-vBq">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                        </imageView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="gDt-9G-vBq" firstAttribute="top" secondItem="1QI-WD-X0A" secondAttribute="top" id="3gx-eL-aHH"/>
+                        <constraint firstItem="gDt-9G-vBq" firstAttribute="leading" secondItem="1QI-WD-X0A" secondAttribute="leading" id="84a-dG-gN7"/>
+                        <constraint firstAttribute="height" constant="100" id="Jiz-ql-xBa"/>
+                        <constraint firstAttribute="bottom" secondItem="gDt-9G-vBq" secondAttribute="bottom" id="O0o-8n-v9i"/>
+                        <constraint firstAttribute="width" constant="100" id="mXm-0S-o7W"/>
+                        <constraint firstAttribute="trailing" secondItem="gDt-9G-vBq" secondAttribute="trailing" id="yHD-bk-8KA"/>
+                    </constraints>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UE-hK-gaF">
+                    <rect key="frame" x="166.5" y="220" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOo-Up-O2V">
+                    <rect key="frame" x="166.5" y="301" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM0-Z5-zPJ">
+                    <rect key="frame" x="166.5" y="382" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-qH-U4S">
+                    <rect key="frame" x="131.5" y="443" width="112.5" height="31"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Cerrar Sesión"/>
+                    <connections>
+                        <action selector="close:" destination="-1" eventType="touchUpInside" id="95G-6i-gL0"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="343-In-BPt" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="5mc-Eb-YUd"/>
-                <constraint firstItem="343-In-BPt" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LHn-sA-ik4"/>
+                <constraint firstItem="1QI-WD-X0A" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="0Sv-EE-5Sj"/>
+                <constraint firstItem="1QI-WD-X0A" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="0lL-w8-cwW"/>
+                <constraint firstItem="Bk0-qH-U4S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8E1-j4-Ysi"/>
+                <constraint firstItem="rM0-Z5-zPJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F4Y-g9-Hcu"/>
+                <constraint firstItem="5UE-hK-gaF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LQZ-hf-sfa"/>
+                <constraint firstItem="rM0-Z5-zPJ" firstAttribute="top" secondItem="wOo-Up-O2V" secondAttribute="bottom" constant="60" id="Lze-Hd-6aN"/>
+                <constraint firstItem="wOo-Up-O2V" firstAttribute="top" secondItem="5UE-hK-gaF" secondAttribute="bottom" constant="60" id="Mnd-v3-oiQ"/>
+                <constraint firstItem="wOo-Up-O2V" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VY9-rp-CDf"/>
+                <constraint firstItem="5UE-hK-gaF" firstAttribute="top" secondItem="1QI-WD-X0A" secondAttribute="bottom" constant="60" id="Zn9-Qm-Nmx"/>
+                <constraint firstItem="Bk0-qH-U4S" firstAttribute="top" secondItem="rM0-Z5-zPJ" secondAttribute="bottom" constant="40" id="tyZ-o4-MJd"/>
             </constraints>
             <point key="canvasLocation" x="138" y="72"/>
         </view>
     </objects>
+    <resources>
+        <image name="icono_principal" width="140" height="140"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
