@@ -34,7 +34,7 @@ class LaunchRouter: LaunchWireframeProtocol {
     }
     
     func goToHome(){
-        let homeView = HomeProductsRouter.createModule()
+        let homeView = TabBarHome()
         viewController?.navigationController?.pushViewController(homeView, animated: true)
     }
 }
