@@ -15,15 +15,15 @@ class TabBarHome: UITabBarController {
         super.viewDidLoad()
 
         let search = SearchRouter.createModule()
-        search.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "back_arrow")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_login")?.withRenderingMode(.alwaysOriginal))
+        search.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "icon_search")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_searchblack")?.withRenderingMode(.alwaysOriginal))
         controllers.append(search)
         
         let home = HomeProductsRouter.createModule()
-        home.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "back_arrow")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_login")?.withRenderingMode(.alwaysOriginal))
+        home.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "icon_homeblack")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_home")?.withRenderingMode(.alwaysOriginal))
         controllers.append(home)
         
         let profile = ProfileRouter.createModule()
-        profile.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "back_arrow")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_login")?.withRenderingMode(.alwaysOriginal))
+        profile.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "icon_profileblack")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_profile")?.withRenderingMode(.alwaysOriginal))
         controllers.append(profile)
         
         self.viewControllers = self.controllers.map({ controller in
