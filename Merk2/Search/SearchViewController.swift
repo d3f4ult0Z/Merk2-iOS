@@ -8,6 +8,7 @@
 
 import UIKit
 import MapKit
+import Alamofire
 
 class SearchViewController: UIViewController, CLLocationManagerDelegate, SearchViewProtocol, MKMapViewDelegate {
 
@@ -19,11 +20,29 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, SearchV
 
 	override func viewDidLoad() {
         super.viewDidLoad()
+        locationManager = CLLocationManager()
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.delegate = self
+        locationManager?.distanceFilter = kCLDistanceFilterNone
+        locationManager?.desiredAccuracy = kCLLocationAccuracyBest
+        mapsearch.showsUserLocation = true
+        locationManager?.startUpdatingLocation()
+        centerViewOnUser()
+    }
+
+    func botonsearch(_ sender: Any) {
         
-   
-        }
-        func botonsearch(_ sender: Any) {
+    }
+    
+    private let rangeInMeters: Double = 5000
+     
+    private func centerViewOnUser() {
+        guard let location = locationManager?.location?.coordinate else { return }
         
+        let coordinateRegion = MKCoordinateRegion.init(center: location,
+                                                       latitudinalMeters: rangeInMeters,
+                                                       longitudinalMeters: rangeInMeters)
+        mapsearch.setRegion(coordinateRegion, animated: true)
     }
     
 }

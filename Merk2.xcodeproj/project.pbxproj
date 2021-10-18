@@ -625,6 +625,8 @@
 				DEVELOPMENT_TEAM = H27YCU5AZR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Merk2/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Para poder localizar negocios cerca tuyo";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Para poder localizar negocios cerca tuyo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -654,6 +656,8 @@
 				DEVELOPMENT_TEAM = H27YCU5AZR;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Merk2/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "Para poder localizar negocios cerca tuyo";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Para poder localizar negocios cerca tuyo";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
