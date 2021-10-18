@@ -3,11 +3,14 @@
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SearchViewController" customModule="Merk2" customModuleProvider="target">
             <connections>
+                <outlet property="mapsearch" destination="kdB-3K-7Ja" id="FTD-c2-MTe"/>
+                <outlet property="textsearch" destination="VCJ-8H-mTR" id="utZ-Bp-E5T"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -16,19 +19,56 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Buscador aqui" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nXh-mj-vel">
-                    <rect key="frame" x="133" y="323" width="109" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lml-2j-UCt">
+                    <rect key="frame" x="20" y="80" width="335" height="34"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VCJ-8H-mTR">
+                            <rect key="frame" x="0.0" y="0.0" width="335" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xty-MR-CDW">
+                            <rect key="frame" x="286" y="5" width="48" height="24"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" image="icon_searchblack"/>
+                            <connections>
+                                <action selector="botonsearch:" destination="-1" eventType="touchUpInside" id="7tt-Wf-caB"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="xty-MR-CDW" secondAttribute="trailing" constant="1" id="32p-Tc-a97"/>
+                        <constraint firstAttribute="height" constant="34" id="9rC-Ur-bSs"/>
+                        <constraint firstItem="VCJ-8H-mTR" firstAttribute="top" secondItem="lml-2j-UCt" secondAttribute="top" id="EQf-Uz-Dq9"/>
+                        <constraint firstAttribute="trailing" secondItem="VCJ-8H-mTR" secondAttribute="trailing" id="I0y-V1-435"/>
+                        <constraint firstItem="VCJ-8H-mTR" firstAttribute="leading" secondItem="lml-2j-UCt" secondAttribute="leading" id="IBa-SU-AmC"/>
+                        <constraint firstItem="xty-MR-CDW" firstAttribute="top" secondItem="lml-2j-UCt" secondAttribute="top" constant="5" id="QW8-aS-a7v"/>
+                        <constraint firstAttribute="bottom" secondItem="xty-MR-CDW" secondAttribute="bottom" constant="5" id="e3D-i2-0vp"/>
+                        <constraint firstAttribute="bottom" secondItem="VCJ-8H-mTR" secondAttribute="bottom" id="eRs-QV-txo"/>
+                    </constraints>
+                </view>
+                <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="kdB-3K-7Ja">
+                    <rect key="frame" x="20" y="144" width="335" height="379"/>
+                </mapView>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="nXh-mj-vel" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="DHy-pV-0Jv"/>
-                <constraint firstItem="nXh-mj-vel" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="eMA-Y8-8kD"/>
+                <constraint firstItem="kdB-3K-7Ja" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="3tZ-1F-weW"/>
+                <constraint firstAttribute="trailing" secondItem="lml-2j-UCt" secondAttribute="trailing" constant="20" id="H3r-h1-p9K"/>
+                <constraint firstAttribute="trailing" secondItem="kdB-3K-7Ja" secondAttribute="trailing" constant="20" id="MbS-Ek-wqt"/>
+                <constraint firstItem="lml-2j-UCt" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="80" id="fVO-MZ-tw4"/>
+                <constraint firstItem="lml-2j-UCt" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="tqb-hi-DO0"/>
+                <constraint firstItem="kdB-3K-7Ja" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="w7l-id-dbd"/>
+                <constraint firstItem="kdB-3K-7Ja" firstAttribute="top" secondItem="lml-2j-UCt" secondAttribute="bottom" constant="30" id="xQR-rQ-sID"/>
             </constraints>
-            <point key="canvasLocation" x="138" y="130"/>
+            <point key="canvasLocation" x="136.80000000000001" y="129.98500749625188"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_searchblack" width="24" height="24"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

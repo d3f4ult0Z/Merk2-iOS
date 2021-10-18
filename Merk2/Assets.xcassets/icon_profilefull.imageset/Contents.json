@@ -1,17 +1,15 @@
 {
   "images" : [
     {
-      "filename" : "account-outline.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "account-outline (1).png",
+      "filename" : "account (5).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "account-outline (2).png",
       "idiom" : "universal",
       "scale" : "3x"
     }

@@ -28,7 +28,7 @@
                     </constraints>
                 </imageView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="usc-Vx-Hgy">
-                    <rect key="frame" x="5" y="20" width="48" height="38"/>
+                    <rect key="frame" x="10" y="30" width="48" height="38"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" image="back_arrow"/>
                     <connections>
@@ -63,12 +63,12 @@
                 <constraint firstItem="b4R-EZ-3xV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9rs-Zm-h1n"/>
                 <constraint firstItem="hAz-fL-TKm" firstAttribute="top" secondItem="Fyt-OC-j6K" secondAttribute="bottom" constant="60" id="AQR-JP-nOj"/>
                 <constraint firstItem="C8x-4a-VIX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B9Y-HK-PkM"/>
-                <constraint firstItem="usc-Vx-Hgy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="20" id="MuF-Qt-5es"/>
+                <constraint firstItem="usc-Vx-Hgy" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="MuF-Qt-5es"/>
                 <constraint firstAttribute="trailing" secondItem="Yj5-LB-DmH" secondAttribute="trailing" id="NPP-wP-oHO"/>
                 <constraint firstAttribute="trailing" secondItem="hAz-fL-TKm" secondAttribute="trailing" id="NWf-BO-j87"/>
                 <constraint firstItem="C8x-4a-VIX" firstAttribute="top" secondItem="b4R-EZ-3xV" secondAttribute="bottom" constant="10" id="SOH-MR-kHG"/>
                 <constraint firstItem="Fyt-OC-j6K" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SSZ-vU-9tR"/>
-                <constraint firstItem="usc-Vx-Hgy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="5" id="WFH-6h-fbj"/>
+                <constraint firstItem="usc-Vx-Hgy" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="WFH-6h-fbj"/>
                 <constraint firstItem="Yj5-LB-DmH" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Yid-vJ-ahp"/>
                 <constraint firstAttribute="bottom" secondItem="Yj5-LB-DmH" secondAttribute="bottom" id="ZQ4-d5-Jiv"/>
                 <constraint firstAttribute="trailing" secondItem="Fyt-OC-j6K" secondAttribute="trailing" id="Zde-63-HPT"/>

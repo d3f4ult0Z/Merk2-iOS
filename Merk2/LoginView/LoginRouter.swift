@@ -36,5 +36,6 @@ class LoginRouter: LoginWireframeProtocol {
     func navigateHome(){
         let homeView = TabBarHome()
         viewController?.navigationController?.pushViewController(homeView, animated: true)
+//        viewController?.navigationController?.popViewController(animated: true)
     }
 }

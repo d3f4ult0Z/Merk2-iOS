@@ -28,8 +28,16 @@ class ProfileRouter: ProfileWireframeProtocol {
         return view
     }
     func navigateGoToLogin(){
-        let profile = LoginRouter.createModule()
-        viewController?.navigationController?.pushViewController(profile, animated: true)
+        if let tabBar = viewController?.tabBarController as? TabBarHome{
+            tabBar.controllers.removeAll()
+            tabBar.viewControllers = tabBar.controllers.map({ controller in
+                return UINavigationController(rootViewController: controller)
+            })
+            tabBar.tabBar.removeFromSuperview()
+            let profile = LoginRouter.createModule()
+            viewController?.navigationController?.setViewControllers([profile], animated: true)
+//            tabBar.navigationController?.popViewController(animated: true)
+        }
         
     }
 }
