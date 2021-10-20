@@ -10,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ProfileViewController" customModule="Merk2" customModuleProvider="target">
             <connections>
                 <outlet property="close" destination="Bk0-qH-U4S" id="tbi-SR-FBG"/>
+                <outlet property="completname" destination="oe6-nK-dvQ" id="mgL-bT-h4m"/>
                 <outlet property="imagen" destination="gDt-9G-vBq" id="1dL-gd-7bj"/>
                 <outlet property="mail" destination="rM0-Z5-zPJ" id="Iaz-43-5Sd"/>
                 <outlet property="phone" destination="wOo-Up-O2V" id="BLM-TM-0sZ"/>
@@ -40,31 +41,37 @@
                     </constraints>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UE-hK-gaF">
-                    <rect key="frame" x="166.5" y="220" width="42" height="21"/>
+                    <rect key="frame" x="166.5" y="190" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOo-Up-O2V">
-                    <rect key="frame" x="166.5" y="301" width="42" height="21"/>
+                    <rect key="frame" x="166.5" y="312" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rM0-Z5-zPJ">
-                    <rect key="frame" x="166.5" y="382" width="42" height="21"/>
+                    <rect key="frame" x="166.5" y="373" width="42" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-qH-U4S">
-                    <rect key="frame" x="131.5" y="443" width="112.5" height="31"/>
+                    <rect key="frame" x="131.5" y="434" width="112.5" height="31"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Cerrar Sesión"/>
                     <connections>
                         <action selector="close:" destination="-1" eventType="touchUpInside" id="95G-6i-gL0"/>
                     </connections>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oe6-nK-dvQ">
+                    <rect key="frame" x="166.5" y="251" width="42" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -73,11 +80,13 @@
                 <constraint firstItem="Bk0-qH-U4S" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8E1-j4-Ysi"/>
                 <constraint firstItem="rM0-Z5-zPJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="F4Y-g9-Hcu"/>
                 <constraint firstItem="5UE-hK-gaF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="LQZ-hf-sfa"/>
-                <constraint firstItem="rM0-Z5-zPJ" firstAttribute="top" secondItem="wOo-Up-O2V" secondAttribute="bottom" constant="60" id="Lze-Hd-6aN"/>
-                <constraint firstItem="wOo-Up-O2V" firstAttribute="top" secondItem="5UE-hK-gaF" secondAttribute="bottom" constant="60" id="Mnd-v3-oiQ"/>
+                <constraint firstItem="rM0-Z5-zPJ" firstAttribute="top" secondItem="wOo-Up-O2V" secondAttribute="bottom" constant="40" id="Lze-Hd-6aN"/>
+                <constraint firstItem="Bk0-qH-U4S" firstAttribute="top" secondItem="rM0-Z5-zPJ" secondAttribute="bottom" constant="40" id="PSW-dO-435"/>
                 <constraint firstItem="wOo-Up-O2V" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="VY9-rp-CDf"/>
-                <constraint firstItem="5UE-hK-gaF" firstAttribute="top" secondItem="1QI-WD-X0A" secondAttribute="bottom" constant="60" id="Zn9-Qm-Nmx"/>
-                <constraint firstItem="Bk0-qH-U4S" firstAttribute="top" secondItem="rM0-Z5-zPJ" secondAttribute="bottom" constant="40" id="tyZ-o4-MJd"/>
+                <constraint firstItem="5UE-hK-gaF" firstAttribute="top" secondItem="1QI-WD-X0A" secondAttribute="bottom" constant="30" id="Zn9-Qm-Nmx"/>
+                <constraint firstItem="oe6-nK-dvQ" firstAttribute="top" secondItem="5UE-hK-gaF" secondAttribute="bottom" constant="40" id="cxD-VW-94f"/>
+                <constraint firstItem="wOo-Up-O2V" firstAttribute="top" secondItem="oe6-nK-dvQ" secondAttribute="bottom" constant="40" id="lKP-f7-v8Z"/>
+                <constraint firstItem="oe6-nK-dvQ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="qR8-x0-4VB"/>
             </constraints>
             <point key="canvasLocation" x="138" y="72"/>
         </view>

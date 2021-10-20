@@ -9,8 +9,35 @@
 //
 
 import UIKit
+import Alamofire
 
-class HomeProductsInteractor: HomeProductsInteractorProtocol {
+class HomeProductsInteractor: UITableViewCell, HomeProductsInteractorProtocol {
 
     weak var presenter: HomeProductsPresenterProtocol?
+   
+    func DataProducts()
+    {
+        let def = UserDefaults.standard
+        guard let phoneString = def.string(forKey: "phone") else
+        {
+            return
+        }
+        let url = "https://api.latitudmegalopolis.com/functions/test.php?"
+        let complement = "keycode=STORES"
+        let params = ["phone" : phoneString]
+        
+        Services().request(url, complemet: complement, method: .post, params: params, model: Store.self){response, error in
+            if let responseData = response{
+                if responseData.success{
+                    let data = responseData.data
+                    self.presenter?.StoreProducts(arreglo: data)
+                }else{
+                    self.presenter?.StoreProductserror(message: "No se encontró información")
+                }
+            }else{
+                self.presenter?.StoreProductserror(message: "No se encontró información")
+            }
+        }
+    }
 }
+

@@ -9,10 +9,12 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class ProfileViewController: UIViewController, ProfileViewProtocol {
     @IBOutlet weak var imagen: UIImageView!
     @IBOutlet weak var user: UILabel!
+    @IBOutlet weak var completname: UILabel!
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var mail: UILabel!
     @IBOutlet weak var close: UIButton!
@@ -34,5 +36,22 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
     func configUI(){
         imagen.layer.cornerRadius = imagen.frame.height / 2
         close.layer.cornerRadius = close.frame.height / 2
+        presenter?.profile()
+    }
+
+    func profileSucces(data:DataProfileUser, phone:String){
+        if let imgUrl = URL(string: data.imagen){
+            self.imagen.af.setImage(withURL: imgUrl)
+        }
+        self.user.text = data.usuario
+        self.completname.text = data.nombre
+        self.mail.text = data.correo
+        self.phone.text = phone
+    }
+    
+    func profileError(message:String){
+        let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "ok", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
     }
 }

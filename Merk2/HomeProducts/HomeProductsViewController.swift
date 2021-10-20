@@ -11,21 +11,36 @@
 import UIKit
 
 class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UITableViewDelegate, UITableViewDataSource {
+    func StoreProducts(arreglo: [StoreData]) {
+        stores = arreglo
+        tableproducts.reloadData()
+    }
+    
+    func StoreProductserror(message: String) {
+        let alert = UIAlertController(title: "No hay información", message: "Error", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Continua", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return product.count
+        return stores.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let products = tableView.dequeueReusableCell(withIdentifier: "products") as? products{
-            products.title.text = product[indexPath.row]
-            products.content.text = subproduct[indexPath.row]
-            products.price.text = "Abierto de:\(price[indexPath.row])"
+            products.title.text = stores[indexPath.row].nombre
+            products.content.text = stores[indexPath.row].descripcion
+            products.price.text = stores[indexPath.row].horario
+            if let urlImg = URL(string: stores[indexPath.row].imagen){
+                products.imaproducts.af.setImage(withURL: urlImg)
+                
+            }
             return products
         }
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.navigateDetailStore(nombre: product[indexPath.row], categoria: subproduct[indexPath.row], horario: "Abierto de:\(price[indexPath.row])")
+        self.presenter?.navigateDetailStore(nombre: stores[indexPath.row].nombre, categoria: stores[indexPath.row].categoria, horario: stores[indexPath.row].horario)
     }
     @IBOutlet weak var tableproducts: UITableView!
     
@@ -38,11 +53,9 @@ class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UI
         tableproducts.dataSource = self
         tableproducts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
         tableproducts.reloadData()
+        presenter?.DataProducts()
     }
-    let product:[String] = [
-    "Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia"]
-    let subproduct:[String] = ["Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más"]
-    let price:[String] = [" 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"]
+    var stores:[StoreData] = []
 
 }
 

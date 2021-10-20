@@ -41,10 +41,13 @@ class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITa
         navigationController?.popViewController(animated: true)
     }
     @IBOutlet weak var TabDescripProcucts: UITableView!
+    
     var nombre: String?, categoria: String?,horario: String?
-    let product:[String] = [
-    "Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia"]
+    
+    let product:[String] = ["Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia","Cafeteria","Dulceria","Merceria","Panaderia"]
+    
     let subproduct:[String] = ["Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más","Cafe,té, malteadas y más","Bollos, pan de dulce ,pasteles y más","Gomitas, chocolates, palomitas y más","Desechables, regalos juguetes y más"]
+    
     let price:[String] = [" 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"," 5 a 9"," 6 a 10"," 3 a 5"," 7 a 9"]
     
     @IBOutlet weak var name: UILabel!

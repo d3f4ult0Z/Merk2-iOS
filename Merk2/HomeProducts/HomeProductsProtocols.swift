@@ -18,17 +18,25 @@ protocol HomeProductsWireframeProtocol: AnyObject {
 //MARK: Presenter -
 protocol HomeProductsPresenterProtocol: AnyObject {
     func navigateDetailStore(nombre: String, categoria: String, horario: String)
-    
+    func DataProducts()
+    func StoreProducts(arreglo:[StoreData])
+    func StoreProductserror(message:String)
 }
 
 //MARK: Interactor -
 protocol HomeProductsInteractorProtocol: AnyObject {
 
   var presenter: HomeProductsPresenterProtocol?  { get set }
+    func DataProducts()
+   
+    
 }
 
 //MARK: View -
 protocol HomeProductsViewProtocol: AnyObject {
 
   var presenter: HomeProductsPresenterProtocol?  { get set }
+    func StoreProducts(arreglo:[StoreData])
+    func StoreProductserror(message:String)
 }
+

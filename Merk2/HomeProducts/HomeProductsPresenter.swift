@@ -24,5 +24,13 @@ class HomeProductsPresenter: HomeProductsPresenterProtocol {
     func navigateDetailStore(nombre: String, categoria: String, horario: String){
         router.navigateDetailStore(nombre: nombre, categoria: categoria, horario: horario)
     }
-    
+    func DataProducts(){
+        interactor?.DataProducts()
+    }
+    func StoreProducts(arreglo: [StoreData]) {
+        view?.StoreProducts(arreglo: arreglo)
+    }
+    func StoreProductserror(message: String) {
+        view?.StoreProductserror(message: message)
+    }
 }

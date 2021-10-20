@@ -11,22 +11,28 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol ProfileWireframeProtocol: class {
+protocol ProfileWireframeProtocol: AnyObject {
     func navigateGoToLogin()
 }
 //MARK: Presenter -
-protocol ProfilePresenterProtocol: class {
+protocol ProfilePresenterProtocol: AnyObject {
     func navigateGoToLogin()
+    func profile()
+    func profileSucces(data:DataProfileUser, phone:String)
+    func profileError(message:String)
 }
 
 //MARK: Interactor -
-protocol ProfileInteractorProtocol: class {
+protocol ProfileInteractorProtocol: AnyObject {
 
   var presenter: ProfilePresenterProtocol?  { get set }
+    func profile()
 }
 
 //MARK: View -
-protocol ProfileViewProtocol: class {
+protocol ProfileViewProtocol: AnyObject {
 
   var presenter: ProfilePresenterProtocol?  { get set }
+    func profileSucces(data:DataProfileUser, phone:String)
+    func profileError(message:String)
 }

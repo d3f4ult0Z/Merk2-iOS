@@ -34,11 +34,10 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, SearchV
         
     }
     
-    private let rangeInMeters: Double = 5000
+    private let rangeInMeters: Double = 500
      
     private func centerViewOnUser() {
         guard let location = locationManager?.location?.coordinate else { return }
-        
         let coordinateRegion = MKCoordinateRegion.init(center: location,
                                                        latitudinalMeters: rangeInMeters,
                                                        longitudinalMeters: rangeInMeters)

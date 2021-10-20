@@ -24,5 +24,16 @@ class ProfilePresenter: ProfilePresenterProtocol {
     func navigateGoToLogin(){
         router.navigateGoToLogin()
     }
+    
+    func profile(){
+        interactor?.profile()
+    }
 
+    func profileSucces(data:DataProfileUser, phone:String){
+        view?.profileSucces(data: data, phone: phone)
+    }
+    
+    func profileError(message:String){
+        view?.profileError(message: message)
+    }
 }
