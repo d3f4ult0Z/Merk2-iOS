@@ -16,7 +16,7 @@ protocol DetailStoreWireframeProtocol: AnyObject {
 }
 //MARK: Presenter -
 protocol DetailStorePresenterProtocol: AnyObject {
-
+    
 }
 
 //MARK: Interactor -

@@ -33,14 +33,13 @@ class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UI
             products.price.text = stores[indexPath.row].horario
             if let urlImg = URL(string: stores[indexPath.row].imagen){
                 products.imaproducts.af.setImage(withURL: urlImg)
-                
             }
             return products
         }
         return UITableViewCell()
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.presenter?.navigateDetailStore(nombre: stores[indexPath.row].nombre, categoria: stores[indexPath.row].categoria, horario: stores[indexPath.row].horario)
+        self.presenter?.navigateDetailStore(data: self.stores[indexPath.row])
     }
     @IBOutlet weak var tableproducts: UITableView!
     

@@ -12,12 +12,12 @@ import Foundation
 
 //MARK: Wireframe -
 protocol HomeProductsWireframeProtocol: AnyObject {
-    func navigateDetailStore(nombre: String, categoria: String, horario: String)
+    func navigateDetailStore(data:StoreData)
     
 }
 //MARK: Presenter -
 protocol HomeProductsPresenterProtocol: AnyObject {
-    func navigateDetailStore(nombre: String, categoria: String, horario: String)
+    func navigateDetailStore(data:StoreData)
     func DataProducts()
     func StoreProducts(arreglo:[StoreData])
     func StoreProductserror(message:String)

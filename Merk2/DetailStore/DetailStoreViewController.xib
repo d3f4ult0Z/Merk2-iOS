@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="TabDescripProcucts" destination="Yj5-LB-DmH" id="UiP-B4-gKP"/>
                 <outlet property="clas" destination="C8x-4a-VIX" id="rDm-29-0oL"/>
+                <outlet property="imaproduct" destination="Fyt-OC-j6K" id="y5P-GM-OEP"/>
                 <outlet property="name" destination="b4R-EZ-3xV" id="moL-mb-OfT"/>
                 <outlet property="time" destination="hAz-fL-TKm" id="wu0-wX-2EO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>

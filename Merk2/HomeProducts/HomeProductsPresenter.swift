@@ -21,8 +21,8 @@ class HomeProductsPresenter: HomeProductsPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func navigateDetailStore(nombre: String, categoria: String, horario: String){
-        router.navigateDetailStore(nombre: nombre, categoria: categoria, horario: horario)
+    func navigateDetailStore(data:StoreData){
+        router.navigateDetailStore(data: data)
     }
     func DataProducts(){
         interactor?.DataProducts()

@@ -14,7 +14,7 @@ class DetailStoreRouter: DetailStoreWireframeProtocol {
     
     weak var viewController: UIViewController?
     
-    static func createModule(nombre: String?, categoria: String?,horario: String?) -> UIViewController {
+    static func createModule(data: StoreData) -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
         let view = DetailStoreViewController(nibName: nil, bundle: nil)
         let interactor = DetailStoreInteractor()
@@ -24,11 +24,9 @@ class DetailStoreRouter: DetailStoreWireframeProtocol {
         view.presenter = presenter
         interactor.presenter = presenter
         router.viewController = view
-        view.nombre = nombre
-        view.categoria = categoria
-        view.horario = horario
+        
+        view.data = data
         
         return view
     }
-    
 }
