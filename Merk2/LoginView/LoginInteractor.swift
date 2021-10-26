@@ -29,7 +29,6 @@ class LoginInteractor: LoginInteractorProtocol {
             }else{
                 self.presenter?.loginError(message: "Error en el servidor, favor de intentar mas tarde")
             }
-            print(error)
         }
     }
 }

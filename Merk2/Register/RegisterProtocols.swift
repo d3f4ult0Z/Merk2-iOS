@@ -18,21 +18,19 @@ protocol RegisterPresenterProtocol: AnyObject {
     func register(user:String,name:String,phone:String,mail:String,pass:String)
     func registerSucces(message:String)
     func registerError(message:String)
-
 }
 
 //MARK: Interactor -
 protocol RegisterInteractorProtocol: AnyObject {
 
-  var presenter: RegisterPresenterProtocol?  { get set }
+    var presenter: RegisterPresenterProtocol?  { get set }
     func register(user:String,name:String,phone:String,mail:String,pass:String)
-    
 }
 
 //MARK: View -
 protocol RegisterViewProtocol: AnyObject {
 
-  var presenter: RegisterPresenterProtocol?  { get set }
+    var presenter: RegisterPresenterProtocol?  { get set }
     func registerSucces(message:String)
     func registerError(message:String)
 }

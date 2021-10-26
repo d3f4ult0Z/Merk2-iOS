@@ -13,7 +13,6 @@
 		566B347A2715D0A7003609A1 /* DetailStoreProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B34742715D0A7003609A1 /* DetailStoreProtocols.swift */; };
 		566B347B2715D0A7003609A1 /* DetailStoreInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B34752715D0A7003609A1 /* DetailStoreInteractor.swift */; };
 		566B347C2715D0A7003609A1 /* DetailStoreViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 566B34762715D0A7003609A1 /* DetailStoreViewController.xib */; };
-		568610C9271480680018BFA1 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568610C8271480680018BFA1 /* File.swift */; };
 		568610CE27149A530018BFA1 /* products.swift in Sources */ = {isa = PBXBuildFile; fileRef = 568610CC27149A530018BFA1 /* products.swift */; };
 		568610CF27149A530018BFA1 /* products.xib in Resources */ = {isa = PBXBuildFile; fileRef = 568610CD27149A530018BFA1 /* products.xib */; };
 		668CF81476C4324F72FDB76A /* Pods_Merk2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D421F867DF600E2988CBC133 /* Pods_Merk2.framework */; };
@@ -70,7 +69,6 @@
 		566B34742715D0A7003609A1 /* DetailStoreProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStoreProtocols.swift; sourceTree = "<group>"; };
 		566B34752715D0A7003609A1 /* DetailStoreInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStoreInteractor.swift; sourceTree = "<group>"; };
 		566B34762715D0A7003609A1 /* DetailStoreViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailStoreViewController.xib; sourceTree = "<group>"; };
-		568610C8271480680018BFA1 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		568610CC27149A530018BFA1 /* products.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = products.swift; sourceTree = "<group>"; };
 		568610CD27149A530018BFA1 /* products.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = products.xib; sourceTree = "<group>"; };
 		B824AB38271758D600258362 /* TabBarHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarHome.swift; sourceTree = "<group>"; };
@@ -158,7 +156,6 @@
 		568610C727147FEF0018BFA1 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				568610C8271480680018BFA1 /* File.swift */,
 				568610CC27149A530018BFA1 /* products.swift */,
 				568610CD27149A530018BFA1 /* products.xib */,
 			);
@@ -453,7 +450,6 @@
 				B843A947270F3C7A00A08664 /* RegisterInteractor.swift in Sources */,
 				566B347A2715D0A7003609A1 /* DetailStoreProtocols.swift in Sources */,
 				B843A943270F3C7A00A08664 /* RegisterPresenter.swift in Sources */,
-				568610C9271480680018BFA1 /* File.swift in Sources */,
 				B824AB5027175BBA00258362 /* SearchViewController.swift in Sources */,
 				B824AB5227175BBA00258362 /* SearchInteractor.swift in Sources */,
 				B824AB422717590500258362 /* ProfileRouter.swift in Sources */,

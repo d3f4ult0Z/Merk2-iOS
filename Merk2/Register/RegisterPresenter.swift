@@ -11,6 +11,17 @@
 import UIKit
 
 class RegisterPresenter: RegisterPresenterProtocol {
+    
+    weak private var view: RegisterViewProtocol?
+    var interactor: RegisterInteractorProtocol?
+    private let router: RegisterWireframeProtocol
+
+    init(interface: RegisterViewProtocol, interactor: RegisterInteractorProtocol?, router: RegisterWireframeProtocol) {
+        self.view = interface
+        self.interactor = interactor
+        self.router = router
+    }
+    
     func register(user: String, name: String, phone: String, mail: String,pass: String) {
         interactor?.register(user: user, name: name, phone: phone, mail: mail, pass: pass)
     }
@@ -22,16 +33,4 @@ class RegisterPresenter: RegisterPresenterProtocol {
     func registerError(message: String) {
         view?.registerError(message: message)
     }
-    
-
-    weak private var view: RegisterViewProtocol?
-    var interactor: RegisterInteractorProtocol?
-    private let router: RegisterWireframeProtocol
-
-    init(interface: RegisterViewProtocol, interactor: RegisterInteractorProtocol?, router: RegisterWireframeProtocol) {
-        self.view = interface
-        self.interactor = interactor
-        self.router = router
-    }
-
 }

@@ -11,22 +11,22 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol SearchWireframeProtocol: class {
+protocol SearchWireframeProtocol: AnyObject {
 
 }
 //MARK: Presenter -
-protocol SearchPresenterProtocol: class {
+protocol SearchPresenterProtocol: AnyObject {
 
 }
 
 //MARK: Interactor -
-protocol SearchInteractorProtocol: class {
+protocol SearchInteractorProtocol: AnyObject {
 
-  var presenter: SearchPresenterProtocol?  { get set }
+    var presenter: SearchPresenterProtocol?  { get set }
 }
 
 //MARK: View -
-protocol SearchViewProtocol: class {
+protocol SearchViewProtocol: AnyObject {
 
-  var presenter: SearchPresenterProtocol?  { get set }
+    var presenter: SearchPresenterProtocol?  { get set }
 }

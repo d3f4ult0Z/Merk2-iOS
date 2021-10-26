@@ -21,8 +21,8 @@ class DetailStorePresenter: DetailStorePresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func DetailProducts(phone: String, id: String){
-        interactor?.DetailProducts(phone: phone, id: id)
+    func DetailProducts(id: String){
+        interactor?.DetailProducts(id: id)
     }
     func DetailProductssucces(array: [DataProducts]){
         view?.DetailProductssucces(array: array)

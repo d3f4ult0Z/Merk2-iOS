@@ -25,14 +25,14 @@ protocol ProfilePresenterProtocol: AnyObject {
 //MARK: Interactor -
 protocol ProfileInteractorProtocol: AnyObject {
 
-  var presenter: ProfilePresenterProtocol?  { get set }
+    var presenter: ProfilePresenterProtocol?  { get set }
     func profile()
 }
 
 //MARK: View -
 protocol ProfileViewProtocol: AnyObject {
 
-  var presenter: ProfilePresenterProtocol?  { get set }
+    var presenter: ProfilePresenterProtocol?  { get set }
     func profileSucces(data:DataProfileUser, phone:String)
     func profileError(message:String)
 }

@@ -28,7 +28,6 @@ class RegisterInteractor: RegisterInteractorProtocol {
             }else{
                 self.presenter?.registerError(message: "Error en el servidor, favor de intentar mas tarde")
             }
-            print(error)
         }
     }
 }

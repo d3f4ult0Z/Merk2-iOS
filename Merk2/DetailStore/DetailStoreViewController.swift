@@ -10,7 +10,50 @@
 
 import UIKit
 
-class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITableViewDelegate, UITableViewDataSource {
+class DetailStoreViewController: UIViewController {
+    
+    var presenter: DetailStorePresenterProtocol?
+    
+    @IBOutlet weak var TabDescripProcucts: UITableView!
+    @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var clas: UILabel!
+    @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var imaproduct: UIImageView!
+    @IBOutlet weak var latitud: UILabel!
+    @IBOutlet weak var longitud: UILabel!
+    
+    var data: StoreData?
+    var detailData : [DataProducts] = []
+    
+	override func viewDidLoad() {
+        super.viewDidLoad()
+        TabDescripProcucts.delegate = self
+        TabDescripProcucts.dataSource = self
+        TabDescripProcucts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
+        TabDescripProcucts.reloadData()
+        guard let clave = data?.id else{
+            return
+        }
+        
+        if let urlImg = URL(string: data?.imagen ?? ""){
+            self.imaproduct.af.setImage(withURL: urlImg)
+        }
+        
+        name.text = data?.nombre
+        clas.text = data?.descripcion
+        time.text = data?.horario
+        latitud.text = data?.latitud
+        longitud.text = data?.longitud
+        
+        presenter?.DetailProducts(id: clave)
+    }
+    
+    @IBAction func botonregresa(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+}
+
+extension DetailStoreViewController:DetailStoreViewProtocol{
     func DetailProductserror(message: String) {
         let alert = UIAlertController(title: "Error", message: "No hay información en el servidor", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title:"Continua", style: .default, handler: nil))
@@ -21,10 +64,9 @@ class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITa
         detailData = array
         TabDescripProcucts.reloadData()
     }
-    
-    var presenter: DetailStorePresenterProtocol?
-    
-    
+}
+
+extension DetailStoreViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return detailData.count
     }
@@ -49,47 +91,4 @@ class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITa
         }
         return UITableViewCell()
     }
-    
-	override func viewDidLoad() {
-        super.viewDidLoad()
-        TabDescripProcucts.delegate = self
-        TabDescripProcucts.dataSource = self
-        TabDescripProcucts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
-        TabDescripProcucts.reloadData()
-        let def = UserDefaults.standard
-        guard let phoneString = def.string(forKey: "phone") else
-        {
-            return
-        }
-        guard let clave = data?.id else
-        {
-            return
-        }
-        if let urlImg = URL(string: data?.imagen ?? ""){
-            self.imaproduct.af.setImage(withURL: urlImg)
-         
-        }
-        name.text = data?.nombre
-        clas.text = data?.descripcion
-        time.text = data?.horario
-        latitud.text = data?.latitud
-        longitud.text = data?.longitud
-        
-        presenter?.DetailProducts(phone: phoneString, id: clave)
-        
-    }
-    @IBAction func botonregresa(_ sender: Any) {
-        navigationController?.popViewController(animated: true)
-    }
-    @IBOutlet weak var TabDescripProcucts: UITableView!
-    
-    var data: StoreData?
-    var detailData : [DataProducts] = []
-    
-    @IBOutlet weak var name: UILabel!
-    @IBOutlet weak var clas: UILabel!
-    @IBOutlet weak var time: UILabel!
-    @IBOutlet weak var imaproduct: UIImageView!
-    @IBOutlet weak var latitud: UILabel!
-    @IBOutlet weak var longitud: UILabel!
 }

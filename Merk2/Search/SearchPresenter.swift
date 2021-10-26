@@ -21,7 +21,4 @@ class SearchPresenter: SearchPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
-    func SearchViewController(){
-        SearchViewController()
-    }
 }

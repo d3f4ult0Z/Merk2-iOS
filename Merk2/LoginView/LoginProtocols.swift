@@ -26,15 +26,14 @@ protocol LoginPresenterProtocol: AnyObject {
 
 //MARK: Interactor -
 protocol LoginInteractorProtocol: AnyObject {
-
-  var presenter: LoginPresenterProtocol?  { get set }
+    var presenter: LoginPresenterProtocol?  { get set }
     func login(phone:String, pass:String)
 }
 
 //MARK: View -
 protocol LoginViewProtocol: AnyObject {
 
-  var presenter: LoginPresenterProtocol?  { get set }
+    var presenter: LoginPresenterProtocol?  { get set }
     func loginSucces(message:String)
     func loginError(message:String)
 }

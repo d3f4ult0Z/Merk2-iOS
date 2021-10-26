@@ -45,14 +45,3 @@ class TabBarHome: UITabBarController {
     }
 
 }
-
-//private extension UITabBar {
-//    var tabBarButtons: [UIView] {
-//        let buttons = self.subviews.filter { $0.isTabBarButton }
-//        return buttons.sorted(by: { $0.frame.origin.x < $1.frame.origin.x })
-//    }
-//    
-//    var badgeViews: [UIView?] {
-//        self.tabBarButtons.map { $0.badgeView }
-//    }
-//}

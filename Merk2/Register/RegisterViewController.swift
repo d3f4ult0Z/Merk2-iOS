@@ -10,7 +10,7 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController, RegisterViewProtocol {
+class RegisterViewController: UIViewController {
     @IBOutlet weak var iconview: UIImageView!
     @IBOutlet weak var user: UITextField!
     @IBOutlet weak var name: UITextField!
@@ -26,10 +26,11 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         super.viewDidLoad()
         config()
     }
-    func config(){
-        iconview.layer.cornerRadius = iconview.frame.height / 2
-        
+    
+    @IBAction func backAction(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func login(_ sender: Any) {
         guard let userStr = user.text else{
             return
@@ -100,6 +101,13 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
             self.present(alert, animated: true, completion: nil)
         }
     }
+    
+    func config(){
+        iconview.layer.cornerRadius = iconview.frame.height / 2
+    }
+}
+
+extension RegisterViewController:RegisterViewProtocol{
     func registerSucces(message:String){
         viewregister.isHidden = true
         let alert = UIAlertController(title: "Registro exitoso", message: message, preferredStyle: .alert)
@@ -108,6 +116,7 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         self.present(alert, animated: true, completion: nil)
     
     }
+    
     func registerError(message:String){
         viewregister.isHidden = true
         let alert = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
@@ -115,9 +124,4 @@ class RegisterViewController: UIViewController, RegisterViewProtocol {
         self.present(alert, animated: true, completion: nil)
         
     }
-    
-    @IBAction func backAction(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
-    
 }

@@ -11,14 +11,13 @@
 import UIKit
 import AlamofireImage
 
-class ProfileViewController: UIViewController, ProfileViewProtocol {
+class ProfileViewController: UIViewController {
     @IBOutlet weak var imagen: UIImageView!
     @IBOutlet weak var user: UILabel!
     @IBOutlet weak var completname: UILabel!
     @IBOutlet weak var phone: UILabel!
     @IBOutlet weak var mail: UILabel!
     @IBOutlet weak var close: UIButton!
-    
     
 	var presenter: ProfilePresenterProtocol?
 
@@ -27,18 +26,21 @@ class ProfileViewController: UIViewController, ProfileViewProtocol {
         configUI()
         
     }
+    
     @IBAction func close(_ sender: Any) {
         presenter?.navigateGoToLogin()
         let det = UserDefaults.standard
         det.set(nil, forKey: "phone")
-        }
+    }
         
     func configUI(){
         imagen.layer.cornerRadius = imagen.frame.height / 2
         close.layer.cornerRadius = close.frame.height / 2
         presenter?.profile()
     }
+}
 
+extension ProfileViewController:ProfileViewProtocol{
     func profileSucces(data:DataProfileUser, phone:String){
         if let imgUrl = URL(string: data.imagen){
             self.imagen.af.setImage(withURL: imgUrl)

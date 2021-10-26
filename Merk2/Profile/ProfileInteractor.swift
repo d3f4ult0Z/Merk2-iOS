@@ -37,7 +37,6 @@ class ProfileInteractor: ProfileInteractorProtocol {
             }else{
                 self.presenter?.profileError(message: "El servidor no respondio correctamente")
             }
-            print(error)
         }
     }
 }

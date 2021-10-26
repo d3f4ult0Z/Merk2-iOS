@@ -15,11 +15,9 @@ class HomeProductsInteractor: UITableViewCell, HomeProductsInteractorProtocol {
 
     weak var presenter: HomeProductsPresenterProtocol?
    
-    func DataProducts()
-    {
+    func DataProducts(){
         let def = UserDefaults.standard
-        guard let phoneString = def.string(forKey: "phone") else
-        {
+        guard let phoneString = def.string(forKey: "phone") else{
             return
         }
         let url = "https://api.latitudmegalopolis.com/functions/test.php?"

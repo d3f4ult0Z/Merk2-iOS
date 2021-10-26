@@ -16,7 +16,7 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, SearchV
     @IBOutlet weak var mapsearch: MKMapView!
     var presenter: SearchPresenterProtocol?
     var locationManager : CLLocationManager?
-//
+    private let rangeInMeters: Double = 500
 
 	override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +33,6 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, SearchV
     func botonsearch(_ sender: Any) {
         
     }
-    
-    private let rangeInMeters: Double = 500
      
     private func centerViewOnUser() {
         guard let location = locationManager?.location?.coordinate else { return }
@@ -43,5 +41,4 @@ class SearchViewController: UIViewController, CLLocationManagerDelegate, SearchV
                                                        longitudinalMeters: rangeInMeters)
         mapsearch.setRegion(coordinateRegion, animated: true)
     }
-    
 }

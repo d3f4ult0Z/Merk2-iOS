@@ -16,7 +16,7 @@ protocol DetailStoreWireframeProtocol: AnyObject {
 }
 //MARK: Presenter -
 protocol DetailStorePresenterProtocol: AnyObject {
-    func DetailProducts(phone: String, id: String)
+    func DetailProducts(id: String)
     func DetailProductserror(message: String)
     func DetailProductssucces(array:[DataProducts])
 }
@@ -24,14 +24,14 @@ protocol DetailStorePresenterProtocol: AnyObject {
 //MARK: Interactor -
 protocol DetailStoreInteractorProtocol: AnyObject {
 
-  var presenter: DetailStorePresenterProtocol?  { get set }
-    func DetailProducts(phone: String, id: String)
+    var presenter: DetailStorePresenterProtocol?  { get set }
+    func DetailProducts(id: String)
 }
 
 //MARK: View -
 protocol DetailStoreViewProtocol: AnyObject {
 
-  var presenter: DetailStorePresenterProtocol?  { get set }
+    var presenter: DetailStorePresenterProtocol?  { get set }
     func DetailProductserror(message: String)
     func DetailProductssucces(array:[DataProducts])
 }

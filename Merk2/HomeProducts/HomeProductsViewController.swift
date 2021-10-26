@@ -10,7 +10,24 @@
 
 import UIKit
 
-class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UITableViewDelegate, UITableViewDataSource {
+class HomeProductsViewController: UIViewController {
+    @IBOutlet weak var tableproducts: UITableView!
+    
+	var presenter: HomeProductsPresenterProtocol?
+    var stores:[StoreData] = []
+
+	override func viewDidLoad() {
+        super.viewDidLoad()
+        self.navigationController?.navigationBar.isHidden = true
+        tableproducts.delegate = self
+        tableproducts.dataSource = self
+        tableproducts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
+        tableproducts.reloadData()
+        presenter?.DataProducts()
+    }
+}
+
+extension HomeProductsViewController:HomeProductsViewProtocol{
     func StoreProducts(arreglo: [StoreData]) {
         stores = arreglo
         tableproducts.reloadData()
@@ -21,7 +38,9 @@ class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UI
         alert.addAction(UIAlertAction(title:"Continua", style: .default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
+}
+
+extension HomeProductsViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return stores.count
     }
@@ -41,20 +60,5 @@ class HomeProductsViewController: UIViewController, HomeProductsViewProtocol, UI
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presenter?.navigateDetailStore(data: self.stores[indexPath.row])
     }
-    @IBOutlet weak var tableproducts: UITableView!
-    
-	var presenter: HomeProductsPresenterProtocol?
-
-	override func viewDidLoad() {
-        super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
-        tableproducts.delegate = self
-        tableproducts.dataSource = self
-        tableproducts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
-        tableproducts.reloadData()
-        presenter?.DataProducts()
-    }
-    var stores:[StoreData] = []
-
 }
 

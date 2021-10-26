@@ -13,7 +13,6 @@ import Foundation
 //MARK: Wireframe -
 protocol HomeProductsWireframeProtocol: AnyObject {
     func navigateDetailStore(data:StoreData)
-    
 }
 //MARK: Presenter -
 protocol HomeProductsPresenterProtocol: AnyObject {
@@ -26,16 +25,14 @@ protocol HomeProductsPresenterProtocol: AnyObject {
 //MARK: Interactor -
 protocol HomeProductsInteractorProtocol: AnyObject {
 
-  var presenter: HomeProductsPresenterProtocol?  { get set }
+    var presenter: HomeProductsPresenterProtocol?  { get set }
     func DataProducts()
-   
-    
 }
 
 //MARK: View -
 protocol HomeProductsViewProtocol: AnyObject {
 
-  var presenter: HomeProductsPresenterProtocol?  { get set }
+    var presenter: HomeProductsPresenterProtocol?  { get set }
     func StoreProducts(arreglo:[StoreData])
     func StoreProductserror(message:String)
 }

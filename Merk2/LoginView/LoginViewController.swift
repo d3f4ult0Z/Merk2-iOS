@@ -10,10 +10,9 @@
 
 import UIKit
 
-class LoginViewController: UIViewController, LoginViewProtocol {
+class LoginViewController: UIViewController {
 
 	var presenter: LoginPresenterProtocol?
-    
     
     @IBOutlet weak var iconView: UIImageView!
     @IBOutlet weak var phoneTextField: UITextField!
@@ -24,11 +23,6 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-    }
-    
-    func configUI(){
-        iconView.layer.cornerRadius = iconView.frame.height / 2
-        loginButton.layer.cornerRadius = loginButton.frame.height / 2
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -71,7 +65,14 @@ class LoginViewController: UIViewController, LoginViewProtocol {
     @IBAction func newUserAction(_ sender: UIButton) {
         presenter?.navigateRegister()
     }
-    
+
+    func configUI(){
+        iconView.layer.cornerRadius = iconView.frame.height / 2
+        loginButton.layer.cornerRadius = loginButton.frame.height / 2
+    }
+}
+
+extension LoginViewController:LoginViewProtocol{
     func loginSucces(message:String){
         loginView.isHidden = true
         let alert = UIAlertController(title: "¡Exito!", message: message, preferredStyle: .alert)
