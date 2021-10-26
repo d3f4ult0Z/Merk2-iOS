@@ -11,17 +11,40 @@
 import UIKit
 
 class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITableViewDelegate, UITableViewDataSource {
+    func DetailProductserror(message: String) {
+        let alert = UIAlertController(title: "Error", message: "No hay información en el servidor", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title:"Continua", style: .default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func DetailProductssucces(array: [DataProducts]) {
+        detailData = array
+        TabDescripProcucts.reloadData()
+    }
+    
     var presenter: DetailStorePresenterProtocol?
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return detailData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let products = tableView.dequeueReusableCell(withIdentifier: "products") as? products{
-//            products.title.text = product[indexPath.row]
-//            products.content.text = subproduct[indexPath.row]
-//            products.price.text = "Abierto de:\(price[indexPath.row])"
+            products.title.text = detailData[indexPath.row].nombre
+            products.content.text = detailData[indexPath.row].descripcion
+            
+            var precio = (detailData[indexPath.row].precio as NSString).floatValue
+            var descuento = (detailData[indexPath.row].descuento as NSString).floatValue
+            let descaplicado = (precio - ( precio * (descuento / 100)))
+            
+            products.price.text = "$\(detailData[indexPath.row].precio)"+" "+"(\(detailData[indexPath.row].descuento)%)"+" "+"$\(descaplicado)"
+            
+
+            if let detimag = URL(string: detailData[indexPath.row].imagen){
+                products.imaproducts.af.setImage(withURL: detimag)
+            }
+            
             return products
         }
         return UITableViewCell()
@@ -33,7 +56,15 @@ class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITa
         TabDescripProcucts.dataSource = self
         TabDescripProcucts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
         TabDescripProcucts.reloadData()
-
+        let def = UserDefaults.standard
+        guard let phoneString = def.string(forKey: "phone") else
+        {
+            return
+        }
+        guard let clave = data?.id else
+        {
+            return
+        }
         if let urlImg = URL(string: data?.imagen ?? ""){
             self.imaproduct.af.setImage(withURL: urlImg)
          
@@ -41,6 +72,11 @@ class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITa
         name.text = data?.nombre
         clas.text = data?.descripcion
         time.text = data?.horario
+        latitud.text = data?.latitud
+        longitud.text = data?.longitud
+        
+        presenter?.DetailProducts(phone: phoneString, id: clave)
+        
     }
     @IBAction func botonregresa(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -48,10 +84,12 @@ class DetailStoreViewController: UIViewController, DetailStoreViewProtocol, UITa
     @IBOutlet weak var TabDescripProcucts: UITableView!
     
     var data: StoreData?
-  
+    var detailData : [DataProducts] = []
     
     @IBOutlet weak var name: UILabel!
     @IBOutlet weak var clas: UILabel!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var imaproduct: UIImageView!
+    @IBOutlet weak var latitud: UILabel!
+    @IBOutlet weak var longitud: UILabel!
 }

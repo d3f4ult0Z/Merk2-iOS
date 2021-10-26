@@ -35,3 +35,16 @@ struct StoreData: Codable {
     let imagen: String
     let latitud, longitud: String
 }
+// MARK: - Products
+struct Products: Codable {
+    let success: Bool
+    let data: [DataProducts]
+}
+
+// MARK: - DataProducts
+struct DataProducts: Codable {
+    let id, nombre, categoria, descripcion: String
+    let disponible: String
+    let imagen: String
+    let existencias, precio, descuento: String
+}

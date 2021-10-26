@@ -11,6 +11,25 @@
 import UIKit
 
 class DetailStoreInteractor: DetailStoreInteractorProtocol {
-
+    
     weak var presenter: DetailStorePresenterProtocol?
+    
+    func DetailProducts(phone: String, id: String){
+        let url = "https://api.latitudmegalopolis.com/functions/test.php?"
+        let complement = "keycode=PRODUCTS"
+        let params = ["phone" : phone, "idStore" :id ]
+        
+        Services().request(url, complemet: complement, method: .post, params: params, model: Products.self){response, error in
+            if let respon = response{
+                if respon.success{
+                    let data = respon.data
+                    self.presenter?.DetailProductssucces(array: data)
+                }else{
+                    self.presenter?.DetailProductserror(message: "No se encontró información")
+                }
+            }else{
+                self.presenter?.DetailProductserror(message: "Error en el servidor, favor de intentar mas tarde")
+            }
+        }
+    }
 }
