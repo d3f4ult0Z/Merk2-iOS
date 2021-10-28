@@ -76,8 +76,8 @@ extension DetailStoreViewController: UITableViewDelegate, UITableViewDataSource{
             products.title.text = detailData[indexPath.row].nombre
             products.content.text = detailData[indexPath.row].descripcion
             
-            var precio = (detailData[indexPath.row].precio as NSString).floatValue
-            var descuento = (detailData[indexPath.row].descuento as NSString).floatValue
+            let precio = (detailData[indexPath.row].precio as NSString).floatValue
+            let descuento = (detailData[indexPath.row].descuento as NSString).floatValue
             let descaplicado = (precio - ( precio * (descuento / 100)))
             
             products.price.text = "$\(detailData[indexPath.row].precio)"+" "+"(\(detailData[indexPath.row].descuento)%)"+" "+"$\(descaplicado)"
