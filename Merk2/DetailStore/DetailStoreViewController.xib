@@ -15,6 +15,7 @@
                 <outlet property="latitud" destination="CaO-li-Rfn" id="Gxw-zL-HVx"/>
                 <outlet property="longitud" destination="mcV-6P-cTb" id="jCt-GQ-Z2F"/>
                 <outlet property="name" destination="b4R-EZ-3xV" id="moL-mb-OfT"/>
+                <outlet property="sinInfo" destination="Fjj-0V-ZOB" id="mUP-zk-G9s"/>
                 <outlet property="time" destination="hAz-fL-TKm" id="wu0-wX-2EO"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -72,6 +73,12 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No hay productos en esta tienda" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fjj-0V-ZOB">
+                    <rect key="frame" x="0.0" y="446" width="375" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
@@ -79,6 +86,7 @@
                 <constraint firstItem="b4R-EZ-3xV" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="9rs-Zm-h1n"/>
                 <constraint firstItem="C8x-4a-VIX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="B9Y-HK-PkM"/>
                 <constraint firstItem="hAz-fL-TKm" firstAttribute="top" secondItem="C8x-4a-VIX" secondAttribute="bottom" constant="5" id="E7a-sf-0kQ"/>
+                <constraint firstItem="Fjj-0V-ZOB" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="HSE-Hr-zVN"/>
                 <constraint firstAttribute="trailing" secondItem="Yj5-LB-DmH" secondAttribute="trailing" id="Hka-aG-wFi"/>
                 <constraint firstItem="mcV-6P-cTb" firstAttribute="leading" secondItem="CaO-li-Rfn" secondAttribute="trailing" constant="5" id="KGg-G5-1P4"/>
                 <constraint firstAttribute="trailing" secondItem="hAz-fL-TKm" secondAttribute="trailing" id="KGq-nN-lwM"/>
@@ -93,6 +101,8 @@
                 <constraint firstAttribute="bottom" secondItem="Yj5-LB-DmH" secondAttribute="bottom" id="ZQ4-d5-Jiv"/>
                 <constraint firstAttribute="trailing" secondItem="Fyt-OC-j6K" secondAttribute="trailing" id="Zde-63-HPT"/>
                 <constraint firstItem="b4R-EZ-3xV" firstAttribute="top" secondItem="Fyt-OC-j6K" secondAttribute="bottom" constant="10" id="Zgq-6M-NKb"/>
+                <constraint firstAttribute="trailing" secondItem="Fjj-0V-ZOB" secondAttribute="trailing" id="gKK-ED-VmS"/>
+                <constraint firstAttribute="bottom" secondItem="Fjj-0V-ZOB" secondAttribute="bottom" constant="200" id="jnS-AS-E7Y"/>
                 <constraint firstItem="CaO-li-Rfn" firstAttribute="top" secondItem="hAz-fL-TKm" secondAttribute="bottom" constant="5" id="m7K-jT-KxT"/>
                 <constraint firstItem="mcV-6P-cTb" firstAttribute="top" secondItem="hAz-fL-TKm" secondAttribute="bottom" constant="5" id="sba-ez-Yrm"/>
                 <constraint firstItem="Fyt-OC-j6K" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wu3-9c-m5O"/>

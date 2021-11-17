@@ -29,4 +29,8 @@ class DetailStoreRouter: DetailStoreWireframeProtocol {
         
         return view
     }
+    func navigateDetProd(data: DataProducts){
+        let detProduct = DetailProductRouter.createModule(data: data)
+        viewController?.navigationController?.pushViewController(detProduct, animated: true)
+    }
 }

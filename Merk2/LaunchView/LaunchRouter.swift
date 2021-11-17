@@ -16,7 +16,7 @@ class LaunchRouter: LaunchWireframeProtocol {
     
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = LaunchViewController(nibName: "LaunchViewController", bundle: nil)
+        let view = LaunchViewController(nibName: nil, bundle: nil)
         let interactor = LaunchInteractor()
         let router = LaunchRouter()
         let presenter = LaunchPresenter(interface: view, interactor: interactor, router: router)

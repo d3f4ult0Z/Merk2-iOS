@@ -21,12 +21,14 @@ class DetailStoreViewController: UIViewController {
     @IBOutlet weak var imaproduct: UIImageView!
     @IBOutlet weak var latitud: UILabel!
     @IBOutlet weak var longitud: UILabel!
+    @IBOutlet weak var sinInfo: UILabel!
     
     var data: StoreData?
     var detailData : [DataProducts] = []
     
 	override func viewDidLoad() {
         super.viewDidLoad()
+        sinInfo.isHidden = true
         TabDescripProcucts.delegate = self
         TabDescripProcucts.dataSource = self
         TabDescripProcucts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
@@ -56,7 +58,7 @@ class DetailStoreViewController: UIViewController {
 extension DetailStoreViewController:DetailStoreViewProtocol{
     func DetailProductserror(message: String) {
         let alert = UIAlertController(title: "Error", message: "No hay información en el servidor", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title:"Continua", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title:"Continua", style: .default, handler: {_ in self.sinInfo.isHidden = false}))
         self.present(alert, animated: true, completion: nil)
     }
     
@@ -91,4 +93,8 @@ extension DetailStoreViewController: UITableViewDelegate, UITableViewDataSource{
         }
         return UITableViewCell()
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.presenter?.navigateDetProd(data: self.detailData[indexPath.row])
+    }
+    
 }

@@ -12,13 +12,14 @@ import Foundation
 
 //MARK: Wireframe -
 protocol DetailStoreWireframeProtocol: AnyObject {
-
+    func navigateDetProd(data: DataProducts)
 }
 //MARK: Presenter -
 protocol DetailStorePresenterProtocol: AnyObject {
     func DetailProducts(id: String)
     func DetailProductserror(message: String)
     func DetailProductssucces(array:[DataProducts])
+    func navigateDetProd(data: DataProducts)
 }
 
 //MARK: Interactor -

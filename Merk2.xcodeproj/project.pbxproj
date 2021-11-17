@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		56679F7727457D0A00BCC32E /* DetailProductPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56679F7127457D0A00BCC32E /* DetailProductPresenter.swift */; };
+		56679F7827457D0A00BCC32E /* DetailProductRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56679F7227457D0A00BCC32E /* DetailProductRouter.swift */; };
+		56679F7927457D0A00BCC32E /* DetailProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56679F7327457D0A00BCC32E /* DetailProductViewController.swift */; };
+		56679F7A27457D0A00BCC32E /* DetailProductProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56679F7427457D0A00BCC32E /* DetailProductProtocols.swift */; };
+		56679F7B27457D0A00BCC32E /* DetailProductInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56679F7527457D0A00BCC32E /* DetailProductInteractor.swift */; };
+		56679F7C27457D0A00BCC32E /* DetailProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 56679F7627457D0A00BCC32E /* DetailProductViewController.xib */; };
 		566B34772715D0A7003609A1 /* DetailStorePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B34712715D0A7003609A1 /* DetailStorePresenter.swift */; };
 		566B34782715D0A7003609A1 /* DetailStoreRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B34722715D0A7003609A1 /* DetailStoreRouter.swift */; };
 		566B34792715D0A7003609A1 /* DetailStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566B34732715D0A7003609A1 /* DetailStoreViewController.swift */; };
@@ -63,6 +69,12 @@
 
 /* Begin PBXFileReference section */
 		48C1F78A196022FA7E3B3DAC /* Pods-Merk2.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Merk2.release.xcconfig"; path = "Target Support Files/Pods-Merk2/Pods-Merk2.release.xcconfig"; sourceTree = "<group>"; };
+		56679F7127457D0A00BCC32E /* DetailProductPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductPresenter.swift; sourceTree = "<group>"; };
+		56679F7227457D0A00BCC32E /* DetailProductRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductRouter.swift; sourceTree = "<group>"; };
+		56679F7327457D0A00BCC32E /* DetailProductViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductViewController.swift; sourceTree = "<group>"; };
+		56679F7427457D0A00BCC32E /* DetailProductProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductProtocols.swift; sourceTree = "<group>"; };
+		56679F7527457D0A00BCC32E /* DetailProductInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailProductInteractor.swift; sourceTree = "<group>"; };
+		56679F7627457D0A00BCC32E /* DetailProductViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailProductViewController.xib; sourceTree = "<group>"; };
 		566B34712715D0A7003609A1 /* DetailStorePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStorePresenter.swift; sourceTree = "<group>"; };
 		566B34722715D0A7003609A1 /* DetailStoreRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStoreRouter.swift; sourceTree = "<group>"; };
 		566B34732715D0A7003609A1 /* DetailStoreViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStoreViewController.swift; sourceTree = "<group>"; };
@@ -138,6 +150,19 @@
 				D421F867DF600E2988CBC133 /* Pods_Merk2.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56679F7027457C6B00BCC32E /* DetailProduct */ = {
+			isa = PBXGroup;
+			children = (
+				56679F7127457D0A00BCC32E /* DetailProductPresenter.swift */,
+				56679F7227457D0A00BCC32E /* DetailProductRouter.swift */,
+				56679F7327457D0A00BCC32E /* DetailProductViewController.swift */,
+				56679F7427457D0A00BCC32E /* DetailProductProtocols.swift */,
+				56679F7527457D0A00BCC32E /* DetailProductInteractor.swift */,
+				56679F7627457D0A00BCC32E /* DetailProductViewController.xib */,
+			);
+			path = DetailProduct;
 			sourceTree = "<group>";
 		};
 		566B34702715D055003609A1 /* DetailStore */ = {
@@ -252,6 +277,7 @@
 		B8A4909E270E090A0052AC61 /* Merk2 */ = {
 			isa = PBXGroup;
 			children = (
+				56679F7027457C6B00BCC32E /* DetailProduct */,
 				B824AB4727175BAC00258362 /* Search */,
 				B824AB3A271758F100258362 /* Profile */,
 				B824AB37271758AE00258362 /* TabBarHome */,
@@ -369,6 +395,7 @@
 				B8D682E4270E1305005E7630 /* LoginViewController.xib in Resources */,
 				568610CF27149A530018BFA1 /* products.xib in Resources */,
 				B8A490AC270E09110052AC61 /* LaunchScreen.storyboard in Resources */,
+				56679F7C27457D0A00BCC32E /* DetailProductViewController.xib in Resources */,
 				566B347C2715D0A7003609A1 /* DetailStoreViewController.xib in Resources */,
 				B8A490A9270E09110052AC61 /* Assets.xcassets in Resources */,
 				B8A490A7270E090A0052AC61 /* Main.storyboard in Resources */,
@@ -433,9 +460,11 @@
 				B8668D9E270FAE1500E3C9A8 /* HomeProductsRouter.swift in Sources */,
 				B8D682EA270E277B005E7630 /* Models.swift in Sources */,
 				B8668DA1270FAE1500E3C9A8 /* HomeProductsInteractor.swift in Sources */,
+				56679F7B27457D0A00BCC32E /* DetailProductInteractor.swift in Sources */,
 				B8D682E7270E1709005E7630 /* Services.swift in Sources */,
 				566B34792715D0A7003609A1 /* DetailStoreViewController.swift in Sources */,
 				B8D682E3270E1305005E7630 /* LoginInteractor.swift in Sources */,
+				56679F7827457D0A00BCC32E /* DetailProductRouter.swift in Sources */,
 				566B34782715D0A7003609A1 /* DetailStoreRouter.swift in Sources */,
 				B8D682E2270E1305005E7630 /* LoginProtocols.swift in Sources */,
 				566B34772715D0A7003609A1 /* DetailStorePresenter.swift in Sources */,
@@ -449,12 +478,14 @@
 				568610CE27149A530018BFA1 /* products.swift in Sources */,
 				B843A947270F3C7A00A08664 /* RegisterInteractor.swift in Sources */,
 				566B347A2715D0A7003609A1 /* DetailStoreProtocols.swift in Sources */,
+				56679F7727457D0A00BCC32E /* DetailProductPresenter.swift in Sources */,
 				B843A943270F3C7A00A08664 /* RegisterPresenter.swift in Sources */,
 				B824AB5027175BBA00258362 /* SearchViewController.swift in Sources */,
 				B824AB5227175BBA00258362 /* SearchInteractor.swift in Sources */,
 				B824AB422717590500258362 /* ProfileRouter.swift in Sources */,
 				B8668DA0270FAE1500E3C9A8 /* HomeProductsProtocols.swift in Sources */,
 				B8D682D6270E1097005E7630 /* LaunchInteractor.swift in Sources */,
+				56679F7A27457D0A00BCC32E /* DetailProductProtocols.swift in Sources */,
 				B824AB432717590500258362 /* ProfileViewController.swift in Sources */,
 				B843A945270F3C7A00A08664 /* RegisterViewController.swift in Sources */,
 				B843A944270F3C7A00A08664 /* RegisterRouter.swift in Sources */,
@@ -462,6 +493,7 @@
 				B824AB412717590500258362 /* ProfilePresenter.swift in Sources */,
 				B8D682D5270E1097005E7630 /* LaunchProtocols.swift in Sources */,
 				B8D682E0270E1305005E7630 /* LoginRouter.swift in Sources */,
+				56679F7927457D0A00BCC32E /* DetailProductViewController.swift in Sources */,
 				B8668D9F270FAE1500E3C9A8 /* HomeProductsViewController.swift in Sources */,
 				B8D682D4270E1097005E7630 /* LaunchViewController.swift in Sources */,
 				B843A946270F3C7A00A08664 /* RegisterProtocols.swift in Sources */,

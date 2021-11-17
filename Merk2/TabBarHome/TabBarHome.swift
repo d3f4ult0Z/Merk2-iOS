@@ -13,6 +13,10 @@ class TabBarHome: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let shop = HomeProductsRouter.createModule()
+        shop.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "caremply")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "carfull")?.withRenderingMode(.alwaysOriginal))
+        controllers.append(shop)
 
         let search = SearchRouter.createModule()
         search.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "icon_searchemply")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "icon_searchfull")?.withRenderingMode(.alwaysOriginal))
@@ -36,7 +40,7 @@ class TabBarHome: UITabBarController {
         self.tabBar.layer.borderColor = .init(red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
         self.tabBar.clipsToBounds = true
 //        self.tabBar.frame = self.tabBar.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
-        selectedIndex = 1
+        selectedIndex = 2
     }
     
     override func viewWillAppear(_ animated: Bool) {

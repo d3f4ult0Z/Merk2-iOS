@@ -11,6 +11,7 @@
 import UIKit
 
 class DetailStorePresenter: DetailStorePresenterProtocol {
+    
 
     weak private var view: DetailStoreViewProtocol?
     var interactor: DetailStoreInteractorProtocol?
@@ -29,6 +30,9 @@ class DetailStorePresenter: DetailStorePresenterProtocol {
     }
     func DetailProductserror(message: String) {
         view?.DetailProductserror(message: message)
+    }
+    func navigateDetProd(data: DataProducts) {
+        router.navigateDetProd(data: data)
     }
 
 }
