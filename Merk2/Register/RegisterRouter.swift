@@ -16,7 +16,7 @@ class RegisterRouter: RegisterWireframeProtocol {
     
     static func createModule() -> UIViewController {
         // Change to get view from storyboard if not using progammatic UI
-        let view = RegisterViewController(nibName: "RegisterViewController", bundle: nil)
+        let view = RegisterViewController(nibName: nil, bundle: nil)
         let interactor = RegisterInteractor()
         let router = RegisterRouter()
         let presenter = RegisterPresenter(interface: view, interactor: interactor, router: router)

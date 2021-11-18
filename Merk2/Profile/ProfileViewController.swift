@@ -45,10 +45,10 @@ extension ProfileViewController:ProfileViewProtocol{
         if let imgUrl = URL(string: data.imagen){
             self.imagen.af.setImage(withURL: imgUrl)
         }
-        self.user.text = data.usuario
-        self.completname.text = data.nombre
-        self.mail.text = data.correo
-        self.phone.text = phone
+        self.user.text = "Usuario: \(data.usuario)"
+        self.completname.text = "Nombre del usuario: \(data.nombre)"
+        self.mail.text = "Correo electrónico: \(data.correo)"
+        self.phone.text = "Teléfono: \(phone)"
     }
     
     func profileError(message:String){

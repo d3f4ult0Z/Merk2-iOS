@@ -30,11 +30,14 @@ class LaunchRouter: LaunchWireframeProtocol {
     
     func goToLogin(){
         let loginView = LoginRouter.createModule()
-        viewController?.navigationController?.pushViewController(loginView, animated: true)
+        let navigationController = UINavigationController(rootViewController: loginView)
+        UIApplication.shared.windows.first?.rootViewController = navigationController
     }
     
     func goToHome(){
         let homeView = TabBarHome()
-        viewController?.navigationController?.pushViewController(homeView, animated: true)
+        let navigationController = UINavigationController(rootViewController: homeView)
+//        self.viewController?.navigationController?.pushViewController(homeView, animated: true)
+        UIApplication.shared.windows.first?.rootViewController = navigationController
     }
 }

@@ -60,14 +60,14 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
         guard let discount = data?.descuento else{
             return
         }
-        idDetProd.text = "Clave de la orden: \(id)"
-        nameDetProd.text = "Platillo: \(name)"
-        categoryDetProd.text = "Categoria: \(category)"
-        descripDetProd.text = "Descripción: \(descrip)"
-        availytiDetProd.text = "Disponibilidad: \(availyti)"
+        idDetProd.text = "No. de orden: \(id)"
+        nameDetProd.text = name
+        categoryDetProd.text = "Id: \(category)"
+        descripDetProd.text = descrip
+        availytiDetProd.text = "Ordenes : \(availyti)"
         existenceDetProd.text = "Existencia: \(existence)"
         priceDetProd.text = "Precio: $\(price)"
-        discountDetProd.text = "Descuento: %\(discount)"
+        discountDetProd.text = "Descuento: \(discount)"+"%"
         
         
     }
