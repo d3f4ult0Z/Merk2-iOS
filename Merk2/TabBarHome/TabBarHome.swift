@@ -14,7 +14,7 @@ class TabBarHome: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let shop = HomeProductsRouter.createModule()
+        let shop = ShopProductsRouter.createModule()
         shop.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "caremply")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "carfull")?.withRenderingMode(.alwaysOriginal))
         controllers.append(shop)
 

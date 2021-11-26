@@ -79,13 +79,34 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJp-nX-cc7">
+                    <rect key="frame" x="10" y="30" width="65" height="55"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" image="icon_backarrow"/>
+                    <connections>
+                        <action selector="backDetailProduct:" destination="-1" eventType="touchUpInside" id="9oF-7X-Bpr"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7p7-fp-LyW">
+                    <rect key="frame" x="219" y="536" width="136" height="31"/>
+                    <color key="backgroundColor" red="0.25862570400000001" green="0.78039215689999997" blue="0.76508709929999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="Agregar al carrito"/>
+                    <connections>
+                        <action selector="addtocardProduct:" destination="-1" eventType="touchUpInside" id="UYI-39-tWe"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="pDZ-QR-E7t" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="0Ny-h8-dmC"/>
+                <constraint firstItem="dJp-nX-cc7" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="3Uu-Xa-wg3"/>
                 <constraint firstItem="gNw-63-DDq" firstAttribute="top" secondItem="TSf-xZ-uyZ" secondAttribute="bottom" constant="20" id="7on-d3-b2a"/>
                 <constraint firstAttribute="trailing" secondItem="IzA-eQ-7P0" secondAttribute="trailing" id="88n-VQ-pae"/>
                 <constraint firstItem="IzA-eQ-7P0" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="A3w-6d-zOS"/>
+                <constraint firstAttribute="trailing" secondItem="7p7-fp-LyW" secondAttribute="trailing" constant="20" id="Cbj-QH-V80"/>
+                <constraint firstItem="dJp-nX-cc7" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="30" id="EEz-kz-RGm"/>
                 <constraint firstItem="TSf-xZ-uyZ" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="J1N-jt-jsa"/>
                 <constraint firstItem="gNw-63-DDq" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="LBO-5Y-Jib"/>
                 <constraint firstItem="a6v-1b-MjD" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="NpE-BM-bzu"/>
@@ -99,6 +120,7 @@
                 <constraint firstItem="LJs-MF-f9X" firstAttribute="top" secondItem="a6v-1b-MjD" secondAttribute="bottom" constant="20" id="iD1-mt-09F"/>
                 <constraint firstItem="Q1r-TL-U7R" firstAttribute="top" secondItem="0mt-bK-Phu" secondAttribute="bottom" constant="20" id="iE2-TR-gBd"/>
                 <constraint firstAttribute="trailing" secondItem="gNw-63-DDq" secondAttribute="trailing" constant="10" id="iwN-se-irJ"/>
+                <constraint firstAttribute="bottom" secondItem="7p7-fp-LyW" secondAttribute="bottom" constant="100" id="k9I-Jf-w5W"/>
                 <constraint firstItem="1zc-i5-YjR" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="kgG-fH-De5"/>
                 <constraint firstItem="LJs-MF-f9X" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="ugR-ht-Z7u"/>
                 <constraint firstItem="0mt-bK-Phu" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="10" id="zpm-3m-9Y5"/>
@@ -106,4 +128,7 @@
             <point key="canvasLocation" x="140" y="105"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_backarrow" width="41" height="41"/>
+    </resources>
 </document>

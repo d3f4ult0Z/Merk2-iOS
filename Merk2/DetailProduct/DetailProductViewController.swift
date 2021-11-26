@@ -71,5 +71,21 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
         
         
     }
-
+    @IBAction func backDetailProduct(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    @IBAction func addtocardProduct(_ sender: Any) {
+        guard let num = data else{
+            return
+        }
+        let shopbuy = UserDefaults.standard
+        if var shoping = shopbuy.array(forKey: "shop") as? [DataProducts]{
+        shoping.append(num)
+            shopbuy.set(shoping, forKey: "shop")
+        }else{
+            let shops: [DataProducts] = [num]
+            shopbuy.set(shops, forKey: "shop")
+            
+        }
+    }
 }
