@@ -15,8 +15,8 @@ class LoginInteractor: LoginInteractorProtocol {
     weak var presenter: LoginPresenterProtocol?
     
     func login(phone:String, pass:String){
-        let url = "https://api.latitudmegalopolis.com/functions/test.php"
-        let complement = "?keycode=LOGINPOST"
+        let url = APIs().getURL(type: .general)
+        let complement = APIs().getURL(type: .login)
         let params = ["phone" : phone, "pass" : pass]
         
         Services().request(url, complemet: complement, method: .post, params: params, model: BasicResponse.self){response, error in
