@@ -40,6 +40,10 @@ struct Products: Codable {
     let success: Bool
     let data: [DataProducts]
 }
+// MARK: - ProductsCart
+struct ProductsCart: Codable {
+    var cart: [DataProducts]
+}
 
 // MARK: - DataProducts
 struct DataProducts: Codable {

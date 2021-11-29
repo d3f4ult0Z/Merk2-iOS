@@ -21,8 +21,22 @@ class ShopProductsViewController: UIViewController, ShopProductsViewProtocol {
         
         tableShopProducts.delegate = self
         tableShopProducts.dataSource = self
-        tableShopProducts.register(UINib(nibName: "Products", bundle: nil), forCellReuseIdentifier: "Products")
+        tableShopProducts.register(UINib(nibName: "products", bundle: nil), forCellReuseIdentifier: "products")
         tableShopProducts.reloadData()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        self.getProducts()
+    }
+    
+    func getProducts(){
+        let userDefaults = UserDefaults.standard
+        if let shoppingCartData = userDefaults.object(forKey: "shoppingCart") as? Data{
+            if let shoppingCart = try? JSONDecoder().decode(ProductsCart.self, from: shoppingCartData){
+                self.shoping = shoppingCart.cart
+                tableShopProducts.reloadData()
+            }
+        }
     }
 }
 extension ShopProductsViewController: UITableViewDelegate, UITableViewDataSource {

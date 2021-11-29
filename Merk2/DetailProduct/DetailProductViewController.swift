@@ -75,17 +75,22 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func addtocardProduct(_ sender: Any) {
-        guard let num = data else{
+        guard let product = data else{
             return
         }
-        let shopbuy = UserDefaults.standard
-        if var shoping = shopbuy.array(forKey: "shop") as? [DataProducts]{
-        shoping.append(num)
-            shopbuy.set(shoping, forKey: "shop")
+        let userDefaults = UserDefaults.standard
+        if let shoppingCartData = userDefaults.object(forKey: "shoppingCart") as? Data{
+            if var shoppingCart = try? JSONDecoder().decode(ProductsCart.self, from: shoppingCartData){
+                shoppingCart.cart.append(product)
+                if let encodeCart = try? JSONEncoder().encode(shoppingCart){
+                    userDefaults.set(encodeCart, forKey: "shoppingCart")
+                }
+            }
         }else{
-            let shops: [DataProducts] = [num]
-            shopbuy.set(shops, forKey: "shop")
-            
+            let newCart = ProductsCart(cart: [product])
+            if let encodeCart = try? JSONEncoder().encode(newCart){
+                userDefaults.set(encodeCart, forKey: "shoppingCart")
+            }
         }
     }
 }
