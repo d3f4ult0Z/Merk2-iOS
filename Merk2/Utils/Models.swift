@@ -17,7 +17,6 @@ struct ProfileUser: Codable {
     let success: Bool
     let data: [DataProfileUser]
 }
-
 // MARK: - DataProfileUser
 struct DataProfileUser: Codable {
     let usuario, nombre, correo, imagen: String
@@ -27,7 +26,6 @@ struct Store: Codable {
     let success: Bool
     let data: [StoreData]
 }
-
 // MARK: - StoreData
 struct StoreData: Codable {
     let id, nombre, categoria, descripcion: String
@@ -44,7 +42,6 @@ struct Products: Codable {
 struct ProductsCart: Codable {
     var cart: [DataProducts]
 }
-
 // MARK: - DataProducts
 struct DataProducts: Codable {
     let id, nombre, categoria, descripcion: String

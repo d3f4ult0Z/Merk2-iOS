@@ -9,7 +9,7 @@ import Foundation
 
 class APIs{
     
-    static var enviroment:Enviroment = .prod
+    static var enviroment:Enviroment = .dev
     
     enum Enviroment{
         case dev
@@ -24,7 +24,7 @@ class APIs{
         if APIs.enviroment == .dev{
             switch type {
             case .general:
-                return "https://api.latitudmgalopolis.com/functions/test.php"
+                return "https://api.latitudmegalopolis.com/functions/test.php"
             case .login:
                 return "?keycode=LOGINPOST"
             }

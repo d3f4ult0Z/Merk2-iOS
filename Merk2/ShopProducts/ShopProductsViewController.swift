@@ -28,6 +28,12 @@ class ShopProductsViewController: UIViewController, ShopProductsViewProtocol {
     override func viewDidAppear(_ animated: Bool) {
         self.getProducts()
     }
+    @IBAction func clearCar(_ sender: Any) {
+        shoping.removeAll()
+        let userDefault = UserDefaults.standard
+        userDefault.set(nil, forKey: "shoppingCart")
+        tableShopProducts.reloadData()
+    }
     
     func getProducts(){
         let userDefaults = UserDefaults.standard
@@ -47,7 +53,7 @@ extension ShopProductsViewController: UITableViewDelegate, UITableViewDataSource
         if let buys = tableShopProducts.dequeueReusableCell(withIdentifier: "products") as? products{
             buys.title.text = shoping[indexPath.row].nombre
             buys.content.text = shoping[indexPath.row].descripcion
-            buys.price.text = shoping[indexPath.row].precio
+            buys.price.text = "$\(shoping[indexPath.row].precio)"
             if let shopProd = URL(string: shoping[indexPath.row].imagen){
                 buys.imaproducts.af.setImage(withURL: shopProd)
             }
