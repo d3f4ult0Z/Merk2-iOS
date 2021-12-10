@@ -61,5 +61,23 @@ extension ShopProductsViewController: UITableViewDelegate, UITableViewDataSource
         }
         return UITableViewCell()
     }
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            tableView.beginUpdates()
+            shoping.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+            tableView.endUpdates()
+            upDateProd()
+        }
+    }
+    func tableView(_ tableView: UITableView, titleForDeleteConfirmationButtonForRowAt indexPath: IndexPath) -> String? {
+        return "Borrar"
+    }
+    func upDateProd(){
+        let userDefaults = UserDefaults.standard
+        let shoppinCart = ProductsCart(cart: shoping)
+        if let encodeCart = try? JSONEncoder().encode(shoppinCart){
+            userDefaults.set(encodeCart, forKey: "shoppingCart")
+            }
+        }
 }
-

@@ -72,7 +72,6 @@ extension DetailStoreViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return detailData.count
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let products = tableView.dequeueReusableCell(withIdentifier: "products") as? products{
             products.title.text = detailData[indexPath.row].nombre

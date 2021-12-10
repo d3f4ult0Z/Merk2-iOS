@@ -11,22 +11,22 @@
 import Foundation
 
 //MARK: Wireframe -
-protocol ShopProductsWireframeProtocol: class {
+protocol ShopProductsWireframeProtocol: AnyObject {
 
 }
 //MARK: Presenter -
-protocol ShopProductsPresenterProtocol: class {
+protocol ShopProductsPresenterProtocol: AnyObject {
 
 }
 
 //MARK: Interactor -
-protocol ShopProductsInteractorProtocol: class {
+protocol ShopProductsInteractorProtocol: AnyObject {
 
   var presenter: ShopProductsPresenterProtocol?  { get set }
 }
 
 //MARK: View -
-protocol ShopProductsViewProtocol: class {
+protocol ShopProductsViewProtocol: AnyObject {
 
   var presenter: ShopProductsPresenterProtocol?  { get set }
 }
