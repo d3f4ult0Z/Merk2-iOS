@@ -32,14 +32,25 @@ class ProfileViewController: UIViewController {
         let det = UserDefaults.standard
         det.set(nil, forKey: "phone")
     }
-        
     func configUI(){
         imagen.layer.cornerRadius = imagen.frame.height / 2
         close.layer.cornerRadius = close.frame.height / 2
-        presenter?.profile()
+        let userDefault = UserDefaults.standard
+        if let _ = userDefault.string(forKey: "phone"){
+            presenter?.profile()
+        }else{
+            cleanProfile()
+        }
+    }
+    func cleanProfile(){
+        imagen.isHidden = true
+        user.isHidden = true
+        completname.isHidden = true
+        phone.isHidden = true
+        mail.isHidden = true
+        close.setTitle("Registrate o crea una cuenta", for: .normal)
     }
 }
-
 extension ProfileViewController:ProfileViewProtocol{
     func profileSucces(data:DataProfileUser, phone:String){
         if let imgUrl = URL(string: data.imagen){

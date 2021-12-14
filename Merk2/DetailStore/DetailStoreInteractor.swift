@@ -15,12 +15,12 @@ class DetailStoreInteractor: DetailStoreInteractorProtocol {
     weak var presenter: DetailStorePresenterProtocol?
     
     func DetailProducts(id: String){
-        guard let phone = UserDefaults.standard.string(forKey: "phone") else{
-            return
-        }
+//        guard let phone = UserDefaults.standard.string(forKey: "phone") else{
+//            return
+//        }
         let url = "https://api.latitudmegalopolis.com/functions/test.php?"
         let complement = "keycode=PRODUCTS"
-        let params = ["phone" : phone, "idStore" :id ]
+        let params = ["phone" : "1111111111", "idStore" :id ]
         
         Services().request(url, complemet: complement, method: .post, params: params, model: Products.self){response, error in
             if let respon = response{

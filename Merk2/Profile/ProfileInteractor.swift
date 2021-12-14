@@ -18,7 +18,6 @@ class ProfileInteractor: ProfileInteractorProtocol {
         guard let phoneString = def.string(forKey: "phone") else{
             return
         }
-
         let url = "https://api.latitudmegalopolis.com/functions/test.php"
         let complement = "?keycode=DETAILUSER"
         let params = ["phone" : phoneString]
