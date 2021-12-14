@@ -12,11 +12,11 @@ import Foundation
 
 //MARK: Wireframe -
 protocol DetailProductWireframeProtocol: AnyObject {
-
+    func goToLogin()
 }
 //MARK: Presenter -
 protocol DetailProductPresenterProtocol: AnyObject {
-
+    func goToLogin()
 }
 
 //MARK: Interactor -

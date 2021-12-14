@@ -21,5 +21,8 @@ class DetailProductPresenter: DetailProductPresenterProtocol {
         self.interactor = interactor
         self.router = router
     }
+    func goToLogin(){
+        router.goToLogin()
+    }
 
 }

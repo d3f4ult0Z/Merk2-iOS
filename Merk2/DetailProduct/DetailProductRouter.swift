@@ -29,4 +29,13 @@ class DetailProductRouter: DetailProductWireframeProtocol {
         
         return view
     }
+    func goToLogin() {
+        if let tabBar = viewController?.tabBarController as? TabBarHome{
+            tabBar.controllers.removeAll()
+            tabBar.viewControllers = tabBar.controllers.map({controller in return UINavigationController(rootViewController: controller)})
+            tabBar.tabBar.removeFromSuperview()
+            let goToLogin = LoginRouter.createModule()
+            viewController?.navigationController?.pushViewController(goToLogin, animated: true)
+        }
+    }
 }

@@ -27,10 +27,11 @@ class ProfileRouter: ProfileWireframeProtocol {
         
         return view
     }
-    
     func navigateGoToLogin(){
         if let tabBar = viewController?.tabBarController as? TabBarHome{
             tabBar.controllers.removeAll()
+            let userDefaults = UserDefaults.standard
+            userDefaults.set(nil, forKey: "shoppingCart")
             tabBar.viewControllers = tabBar.controllers.map({ controller in
                 return UINavigationController(rootViewController: controller)
             })

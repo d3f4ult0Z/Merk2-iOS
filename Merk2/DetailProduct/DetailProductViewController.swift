@@ -75,8 +75,10 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
         navigationController?.popViewController(animated: true)
     }
     @IBAction func addtocardProduct(_ sender: Any) {
+        let userDefault = UserDefaults.standard
+        if let _ = userDefault.string(forKey: "phone"){
         guard let product = data else{
-            return
+        return
         }
         let userDefaults = UserDefaults.standard
         if let shoppingCartData = userDefaults.object(forKey: "shoppingCart") as? Data{
@@ -92,5 +94,13 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
                 userDefaults.set(encodeCart, forKey: "shoppingCart")
             }
         }
+        }else{
+            let alert = UIAlertController(title: "Registrate para comprar", message: "Continua", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
+                self.presenter?.goToLogin()
+            }))
+            self.present(alert, animated: true, completion: nil)
+         }
+        
     }
 }
