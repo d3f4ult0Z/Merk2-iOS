@@ -10,11 +10,12 @@ import UIKit
 class TabBarHome: UITabBarController {
 
     var controllers: Array<UIViewController> = Array()
+    var shop:UIViewController = UIViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let shop = ShopProductsRouter.createModule()
+        shop = ShopProductsRouter.createModule()
         shop.tabBarItem = UITabBarItem(title: nil, image: UIImage(named: "caremply")?.withRenderingMode(.alwaysOriginal), selectedImage: UIImage(named: "carfull")?.withRenderingMode(.alwaysOriginal))
         controllers.append(shop)
 
@@ -41,6 +42,38 @@ class TabBarHome: UITabBarController {
         self.tabBar.clipsToBounds = true
 //        self.tabBar.frame = self.tabBar.frame.inset(by: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
         selectedIndex = 2
+        NotificationCenter.default.addObserver(self, selector: #selector(moveToCart(notification:)), name: NSNotification.Name("MOVERACARRITO"), object: nil)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(countCart(notification:)), name: NSNotification.Name("COUNTCART"), object: nil)
+        
+        self.countCartFirst()
+    }
+    
+    @objc private final func countCart(notification: Notification){
+        countCartFirst()
+    }
+    
+    func countCartFirst(){
+        let number = numberOfItems()
+        if number == 0{
+            self.shop.tabBarItem.badgeValue = nil
+        }else{
+            self.shop.tabBarItem.badgeValue = "\(number)"
+        }
+    }
+    
+    func numberOfItems() -> Int{
+        let userDefaults = UserDefaults.standard
+        if let shoppingCartData = userDefaults.object(forKey: "shoppingCart") as? Data{
+            if let shoppingCart = try? JSONDecoder().decode(ProductsCart.self, from: shoppingCartData){
+                return shoppingCart.cart.count
+            }
+        }
+        return 0
+    }
+    
+    @objc private final func moveToCart(notification: Notification){
+        self.selectedIndex = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {

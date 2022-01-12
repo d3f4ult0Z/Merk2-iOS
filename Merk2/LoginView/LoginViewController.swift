@@ -19,7 +19,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var passTextField: UITextField!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var loginView: UIView!
-    
+    @IBOutlet weak var newCountBotton: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
@@ -69,6 +69,9 @@ class LoginViewController: UIViewController {
     func configUI(){
         iconView.layer.cornerRadius = iconView.frame.height / 2
         loginButton.layer.cornerRadius = loginButton.frame.height / 2
+        loginButton.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
+        newCountBotton.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
+        newCountBotton.layer.cornerRadius = newCountBotton.frame.height/2
     }
 }
 

@@ -11,6 +11,8 @@
 import UIKit
 
 class DetailProductPresenter: DetailProductPresenterProtocol {
+    
+    
 
     weak private var view: DetailProductViewProtocol?
     var interactor: DetailProductInteractorProtocol?

@@ -12,6 +12,7 @@
                 <outlet property="iconView" destination="3ty-0N-UAt" id="CNy-f5-VU1"/>
                 <outlet property="loginButton" destination="WB5-Do-5nR" id="9We-he-nCe"/>
                 <outlet property="loginView" destination="IFT-0k-5My" id="I9p-4H-cTF"/>
+                <outlet property="newCountBotton" destination="ugg-2k-dkb" id="2fQ-aW-JNb"/>
                 <outlet property="passTextField" destination="a6k-ie-8jb" id="CNx-ma-F6b"/>
                 <outlet property="phoneTextField" destination="1hA-Bv-wqX" id="OPW-uJ-Haq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -50,10 +51,12 @@
                     <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ugg-2k-dkb">
-                    <rect key="frame" x="175" y="616" width="200" height="31"/>
+                    <rect key="frame" x="220" y="616" width="135" height="31"/>
+                    <color key="backgroundColor" red="0.25862570400000001" green="0.78039215689999997" blue="0.76508709929999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="200" id="I18-i4-cB4"/>
+                        <constraint firstAttribute="height" constant="31" id="iha-oR-pAp"/>
                     </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Crear una cuenta"/>
                     <connections>
@@ -91,19 +94,19 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="1hA-Bv-wqX" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="4Px-Tj-eiC"/>
+                <constraint firstAttribute="bottom" secondItem="ugg-2k-dkb" secondAttribute="bottom" constant="20" id="6xa-qP-adY"/>
                 <constraint firstAttribute="trailing" secondItem="IFT-0k-5My" secondAttribute="trailing" id="C0j-dz-niM"/>
                 <constraint firstAttribute="trailing" secondItem="a6k-ie-8jb" secondAttribute="trailing" constant="20" id="KYR-aJ-o4N"/>
                 <constraint firstAttribute="bottom" secondItem="IFT-0k-5My" secondAttribute="bottom" id="TJV-P5-XJc"/>
-                <constraint firstAttribute="bottom" secondItem="ugg-2k-dkb" secondAttribute="bottom" constant="20" id="VPZ-11-cmc"/>
                 <constraint firstAttribute="trailing" secondItem="1hA-Bv-wqX" secondAttribute="trailing" constant="20" id="WUs-Oh-Qu4"/>
                 <constraint firstItem="WB5-Do-5nR" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YpA-zm-AuW"/>
                 <constraint firstItem="1Hb-xu-Uqo" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="Yrb-em-n8G"/>
                 <constraint firstItem="1Hb-xu-Uqo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="azi-AZ-6IQ"/>
                 <constraint firstItem="WB5-Do-5nR" firstAttribute="top" secondItem="a6k-ie-8jb" secondAttribute="bottom" constant="60" id="bii-di-SuY"/>
+                <constraint firstAttribute="trailing" secondItem="ugg-2k-dkb" secondAttribute="trailing" constant="20" id="dcj-XY-Rma"/>
                 <constraint firstItem="IFT-0k-5My" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="eqb-nc-Psn"/>
                 <constraint firstItem="1hA-Bv-wqX" firstAttribute="top" secondItem="1Hb-xu-Uqo" secondAttribute="bottom" constant="40" id="kLX-bo-XIy"/>
                 <constraint firstItem="a6k-ie-8jb" firstAttribute="top" secondItem="1hA-Bv-wqX" secondAttribute="bottom" constant="20" id="lZP-Jp-1yM"/>
-                <constraint firstAttribute="trailing" secondItem="ugg-2k-dkb" secondAttribute="trailing" id="mZw-mA-nMf"/>
                 <constraint firstItem="a6k-ie-8jb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="20" id="x1e-ev-T77"/>
                 <constraint firstItem="IFT-0k-5My" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xZY-c4-sYv"/>
             </constraints>

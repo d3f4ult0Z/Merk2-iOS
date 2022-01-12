@@ -18,7 +18,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var pass: UITextField!
     @IBOutlet weak var confirmpass: UITextField!
-    
+    @IBOutlet weak var registBotton: UIButton!
     @IBOutlet weak var viewregister: UIView!
     var presenter: RegisterPresenterProtocol?
 
@@ -104,6 +104,8 @@ class RegisterViewController: UIViewController {
     
     func config(){
         iconview.layer.cornerRadius = iconview.frame.height / 2
+        registBotton.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
+        registBotton.layer.cornerRadius = registBotton.frame.height/2
     }
 }
 

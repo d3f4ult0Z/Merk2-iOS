@@ -4,7 +4,6 @@
 //
 //  Created by Adrian Jacobo on 06/10/21.
 //
-
 import Foundation
 
 // MARK: - BasicResponse
@@ -48,4 +47,5 @@ struct DataProducts: Codable {
     let disponible: String
     let imagen: String
     let existencias, precio, descuento: String
+    var cantidad:Int?
 }

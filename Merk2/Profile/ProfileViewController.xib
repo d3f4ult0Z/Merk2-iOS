@@ -59,16 +59,15 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bk0-qH-U4S">
-                    <rect key="frame" x="99.5" y="532" width="176" height="55.5"/>
+                    <rect key="frame" x="112" y="532" width="151.5" height="31"/>
+                    <color key="backgroundColor" red="0.70266197549999998" green="1" blue="0.9749891181" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="0kD-dL-CzV"/>
+                    </constraints>
+                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" buttonSize="large">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Cerrar Sesión">
-                                <attributes>
-                                    <font key="NSFont" size="22" name="Helvetica"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
+                    <buttonConfiguration key="configuration" style="plain" title="Cerrar Sesión" buttonSize="large">
+                        <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="18"/>
                     </buttonConfiguration>
                     <connections>
                         <action selector="close:" destination="-1" eventType="touchUpInside" id="95G-6i-gL0"/>

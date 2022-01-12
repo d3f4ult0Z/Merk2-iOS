@@ -53,6 +53,7 @@ class DetailStoreViewController: UIViewController {
     @IBAction func botonregresa(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
 }
 
 extension DetailStoreViewController:DetailStoreViewProtocol{
@@ -80,14 +81,15 @@ extension DetailStoreViewController: UITableViewDelegate, UITableViewDataSource{
             let precio = (detailData[indexPath.row].precio as NSString).floatValue
             let descuento = (detailData[indexPath.row].descuento as NSString).floatValue
             let descaplicado = (precio - ( precio * (descuento / 100)))
-            
-            products.price.text = "$\(detailData[indexPath.row].precio)"+" "+"(\(detailData[indexPath.row].descuento)%)"+" "+"$\(descaplicado)"
-            
-
+            let cifraRedond = NSString(format: "%.2f", descaplicado)
             if let detimag = URL(string: detailData[indexPath.row].imagen){
                 products.imaproducts.af.setImage(withURL: detimag)
             }
-            
+            if descuento == 0 {
+                products.price.text = "$\(cifraRedond)"
+            }else{
+                products.price.text = "$\(detailData[indexPath.row].precio)"+" "+"(\(detailData[indexPath.row].descuento)%)"+" "+"$\(cifraRedond)"
+            }
             return products
         }
         return UITableViewCell()
@@ -95,5 +97,4 @@ extension DetailStoreViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         self.presenter?.navigateDetProd(data: self.detailData[indexPath.row])
     }
-    
 }

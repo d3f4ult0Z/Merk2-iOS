@@ -23,18 +23,22 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
     @IBOutlet weak var existenceDetProd: UILabel!
     @IBOutlet weak var priceDetProd: UILabel!
     @IBOutlet weak var discountDetProd: UILabel!
+    @IBOutlet weak var addToCarBotton: UIButton!
+    @IBOutlet weak var countMenosBotton: UIButton!
+    @IBOutlet weak var numOrden: UITextField!
+    @IBOutlet weak var countMasBotton: UIButton!
     
     var data: DataProducts?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        configBottonAddToCar()
+        numOrden.isEnabled = false
         guard let _ = data?.id else{
             return
         }
         if let imadet = URL(string: data?.imagen ?? ""){
             self.imaDetProd.af.setImage(withURL: imadet)
-            
         }
         guard let price = data?.precio else{
             return
@@ -68,8 +72,15 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
         existenceDetProd.text = "Existencia: \(existence)"
         priceDetProd.text = "Precio: $\(price)"
         discountDetProd.text = "Descuento: \(discount)"+"%"
-        
-        
+    }
+    func configBottonAddToCar(){
+        addToCarBotton.layer.cornerRadius = addToCarBotton.frame.height/2
+        addToCarBotton.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
+        countMenosBotton.layer.cornerRadius = countMenosBotton.frame.height/2
+        countMenosBotton.backgroundColor = .gray
+        countMenosBotton.isEnabled = false
+        countMasBotton.layer.cornerRadius = countMasBotton.frame.height/2
+        countMasBotton.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
     }
     @IBAction func backDetailProduct(_ sender: Any) {
         navigationController?.popViewController(animated: true)
@@ -77,30 +88,95 @@ class DetailProductViewController: UIViewController, DetailProductViewProtocol {
     @IBAction func addtocardProduct(_ sender: Any) {
         let userDefault = UserDefaults.standard
         if let _ = userDefault.string(forKey: "phone"){
-        guard let product = data else{
-        return
-        }
-        let userDefaults = UserDefaults.standard
-        if let shoppingCartData = userDefaults.object(forKey: "shoppingCart") as? Data{
-            if var shoppingCart = try? JSONDecoder().decode(ProductsCart.self, from: shoppingCartData){
-                shoppingCart.cart.append(product)
-                if let encodeCart = try? JSONEncoder().encode(shoppingCart){
-                    userDefaults.set(encodeCart, forKey: "shoppingCart")
+            guard var product = data else{
+                return
+            }
+            product.cantidad = Int(self.numOrden.text ?? "0")
+            if let shoppingCartData = userDefault.object(forKey: "shoppingCart") as? Data{
+                if var shoppingCart = try? JSONDecoder().decode(ProductsCart.self, from: shoppingCartData){
+                    var agregarACarrito = true
+                    for i in 0..<shoppingCart.cart.count{
+                        if shoppingCart.cart[i].id == data?.id{
+                            agregarACarrito = false
+                        }
+                    }
+                    if agregarACarrito{
+                        shoppingCart.cart.append(product)
+                        if let encodeCart = try? JSONEncoder().encode(shoppingCart){
+                            userDefault.set(encodeCart, forKey: "shoppingCart")
+                            self.showAlert()
+                        }else{
+                            let alert = UIAlertController(title: "Error", message: "El producto no se pudo agregar al carrito", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
+                            self.present(alert, animated: true, completion: nil)
+                        }
+                    }else{
+                        let alert = UIAlertController(title: "Error", message: "El producto que intentas agregar ya se encuentra en tu carrito", preferredStyle: .alert)
+                        alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
+                        self.present(alert, animated: true, completion: nil)
+                    }
+                }else{
+                    let alert = UIAlertController(title: "Error", message: "El producto no se agrego al carrito", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            }else{
+                let newCart = ProductsCart(cart: [product])
+                if let encodeCart = try? JSONEncoder().encode(newCart){
+                    userDefault.set(encodeCart, forKey: "shoppingCart")
+                    self.showAlert()
+                }else{
+                    let alert = UIAlertController(title: "Error", message: "El producto no se agrego al carrito", preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
                 }
             }
-        }else{
-            let newCart = ProductsCart(cart: [product])
-            if let encodeCart = try? JSONEncoder().encode(newCart){
-                userDefaults.set(encodeCart, forKey: "shoppingCart")
-            }
-        }
         }else{
             let alert = UIAlertController(title: "Registrate para comprar", message: "Continua", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
                 self.presenter?.goToLogin()
             }))
             self.present(alert, animated: true, completion: nil)
-         }
-        
+        }
+    }
+    func showAlert(){
+        let alert = UIAlertController(title: "Agregaste el producto al carrito", message: "Con la cantidad elegida", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {_ in
+            self.navigationController?.popViewController(animated: true)
+        }))
+        alert.addAction(UIAlertAction(title: "Ve al carrito", style: .default, handler: {_ in
+            self.navigationController?.popViewController(animated: true)
+            NotificationCenter.default.post(name: NSNotification.Name("MOVERACARRITO"), object: nil)
+        }))
+        self.present(alert, animated: true, completion: nil)
+        NotificationCenter.default.post(name: NSNotification.Name("COUNTCART"), object: nil)
+    }
+    
+    @IBAction func countMenosBotton(_ sender: Any) {
+        var actualNum:Int = Int(numOrden.text ?? "0") ?? 0
+        actualNum -= 1
+        if actualNum == 1 {
+            countMenosBotton.isEnabled = false
+            countMenosBotton.backgroundColor = .gray
+        }else{
+            countMasBotton.isEnabled = true
+            countMasBotton.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
+        }
+        numOrden.text = "\(actualNum)"
+    }
+    @IBAction func countMasBotton(_ sender: Any) {
+        let existen = data?.existencias
+        let numCount = (existen! as NSString).integerValue
+        var actualNum:Int = Int(numOrden.text ?? "0") ?? 0
+        actualNum += 1
+        if actualNum == numCount {
+            countMasBotton.isEnabled = false
+            countMasBotton.backgroundColor = .gray
+        }else{
+            countMenosBotton.isEnabled = true
+            countMenosBotton.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
+        }
+        numOrden.text = "\(actualNum)"
     }
 }
+

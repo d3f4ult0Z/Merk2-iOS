@@ -35,6 +35,7 @@ class ProfileViewController: UIViewController {
     func configUI(){
         imagen.layer.cornerRadius = imagen.frame.height / 2
         close.layer.cornerRadius = close.frame.height / 2
+        close.backgroundColor = UIColor(displayP3Red: 5/255, green: 197/255, blue: 216/255, alpha: 1)
         let userDefault = UserDefaults.standard
         if let _ = userDefault.string(forKey: "phone"){
             presenter?.profile()

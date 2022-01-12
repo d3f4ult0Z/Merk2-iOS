@@ -25,6 +25,11 @@ class HomeProductsViewController: UIViewController {
         tableproducts.reloadData()
         presenter?.DataProducts()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+//        NotificationCenter.default.post(name: NSNotification.Name("COUNTCART"), object: nil)
+    }
 }
 
 extension HomeProductsViewController:HomeProductsViewProtocol{
